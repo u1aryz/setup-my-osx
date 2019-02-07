@@ -4,3 +4,4 @@
   roles:
     - homebrew
     - osx_defaults
+    - fish

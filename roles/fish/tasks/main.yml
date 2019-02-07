@@ -1,0 +1,45 @@
+- name: fishを選択可能なシェルとして追加
+  lineinfile:
+    path: /etc/shells
+    line: /usr/local/bin/fish
+  become: yes
+
+- name: 既存のシェルを確認する
+  shell: echo $SHELL
+  register: current_shell
+  changed_when: no
+
+- name: fishをデフォルトのシェルにする
+  shell: chsh -s /usr/local/bin/fish
+  become: yes
+  when: current_shell.stdout != "/usr/local/bin/fish"
+
+- name: fisherをインストール
+  get_url:
+    url: https://git.io/fisher
+    dest: ~/.config/fish/functions/fisher.fish
+
+- name: Powerline fontsをclone
+  git:
+    repo: https://github.com/powerline/fonts.git
+    dest: ~/.config/powerlinefonts
+    depth: 1
+
+- name: Powerline fontsのインストールをチェック
+  shell: ls ~/Library/Fonts/*Powerline.ttf
+  register: fonts_ls_result
+  failed_when: no
+  changed_when: no
+
+- name: Powerline fontsをインストール
+  shell: ~/.config/powerlinefonts/install.sh
+  when: fonts_ls_result.rc != 0
+
+- name: fishのパッケージファイルを更新
+  copy:
+    dest: ~/.config/fish/fishfile
+    content: "{{ fish_packages }}"
+
+- name: fishのパッケージを更新
+  shell: fish -c fisher
+  changed_when: no
