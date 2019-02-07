@@ -1,0 +1,37 @@
+- name: homebrewのtabリポジトリを追加
+  homebrew_tap:
+    tap: "{{ item }}"
+    state: present
+  with_items: "{{ taps }}"
+
+- name: homebrewをアップデート
+  homebrew:
+    update_homebrew: yes
+
+- name: brewパッケージをインストール
+  homebrew:
+    name: "{{ item.name }}"
+    state: latest
+  with_items: "{{ packages }}"
+
+- block:
+    - name: パスワードなしでsudoを許可
+      lineinfile:
+        path: /etc/sudoers
+        line: "{{ user }} ALL=(ALL) NOPASSWD: ALL"
+      become: yes
+      changed_when: no
+    - name: caskパッケージをインストール
+      homebrew_cask:
+        name: "{{ item.name }}"
+        state: installed
+        install_options: "appdir=/Applications"
+      with_items: "{{ cask_packages }}"
+  always:
+    - name: パスワードなしでsudoを許可の設定を削除
+      lineinfile:
+        path: /etc/sudoers
+        line: "{{ user }} ALL=(ALL) NOPASSWD: ALL"
+        state: absent
+      become: yes
+      changed_when: no

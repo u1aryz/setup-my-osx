@@ -1,0 +1,46 @@
+taps:
+  - AdoptOpenJDK/openjdk
+packages:
+  - { name: git }
+  - { name: tig }
+  - { name: mercurial }
+  - { name: tree }
+  - { name: wget }
+  - { name: go }
+  - { name: tmux }
+  - { name: curl }
+  - { name: yarn }
+  - { name: ag }
+  - { name: gdub }
+  - { name: peco }
+  - { name: ghq }
+  - { name: fzf }
+  - { name: dep }
+  - { name: fish }
+  - { name: pyenv }
+  - { name: openssl }
+  - { name: fontconfig }
+cask_packages:
+  - { name: caffeine }
+  - { name: adoptopenjdk8 }
+  - { name: alfred }
+  - { name: google-chrome }
+  - { name: google-chrome-canary }
+  - { name: google-cloud-sdk }
+  - { name: google-japanese-ime }
+  - { name: android-studio }
+  - { name: webstorm }
+  - { name: keyboardcleantool }
+  - { name: virtualbox }
+  - { name: gimp }
+  - { name: karabiner-elements }
+  - { name: google-backup-and-sync }
+  - { name: flux }
+  - { name: slack }
+  - { name: vagrant }
+  - { name: visual-studio-code }
+  - { name: vlc }
+  - { name: insomnia }
+  - { name: hyper }
+  - { name: charles }
+  - { name: docker }
