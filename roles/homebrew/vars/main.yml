@@ -44,3 +44,5 @@ cask_packages:
   - { name: hyper }
   - { name: charles }
   - { name: docker }
+  - { name: chromium }
+  - { name: qfinder-pro }
