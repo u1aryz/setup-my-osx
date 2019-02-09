@@ -14,6 +14,11 @@
   become: yes
   when: current_shell.stdout != "/usr/local/bin/fish"
 
+- name: fisherのインストール先を作成
+  file:
+    path: ~/.config/fish/functions
+    state: directory
+
 - name: fisherをインストール
   get_url:
     url: https://git.io/fisher
