@@ -1,7 +1,13 @@
+- name: NeoBundleのインストーラーのダウンロード先を作成
+  file:
+    path: ~/.config/neobundle
+    state: directory
+
 - name: NeoBundleのインストーラーをダウンロード
   get_url:
     url: https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh
-    dest: ~/.config/neobundle
+    dest: ~/.config/neobundle/install.sh
+    mode: +x
 
 - name: NeoBundleのインストールチェック
   shell: ls ~/.vim/bundle/neobundle.vim
