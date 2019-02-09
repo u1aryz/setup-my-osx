@@ -73,8 +73,8 @@
   osx_defaults:
     domain: com.apple.driver.AppleBluetoothMultitouch.trackpad
     key: Clicking
-    type: bool
-    value: true
+    type: int
+    value: 1
 
 # キーボード関連
 - name: フルキーボードアクセスを有効にする
