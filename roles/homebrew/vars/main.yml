@@ -1,5 +1,6 @@
 taps:
   - AdoptOpenJDK/openjdk
+  - mas-cli/tap
 packages:
   - { name: git }
   - { name: tig }
@@ -20,6 +21,7 @@ packages:
   - { name: pyenv }
   - { name: openssl }
   - { name: fontconfig }
+  - { name: mas }
 cask_packages:
   - { name: caffeine }
   - { name: adoptopenjdk8 }
