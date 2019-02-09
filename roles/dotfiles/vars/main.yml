@@ -4,10 +4,4 @@ files:
   - .hyper.js
   - .tmux.conf
   - .vimrc
-  - .vimrc.appearance
-  - .vimrc.basic
-  - .vimrc.bundle
-  - .vimrc.colors
-  - .vimrc.completion
-  - .vimrc.editing
-  - .vimrc.unite
+  - .vim
