@@ -26,6 +26,7 @@
         name: "{{ item.name }}"
         state: installed
         install_options: "appdir=/Applications"
+      failed_when: no
       with_items: "{{ cask_packages }}"
   always:
     - name: パスワードなしでsudoを許可の設定を削除
