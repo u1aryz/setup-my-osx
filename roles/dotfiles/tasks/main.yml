@@ -1,0 +1,11 @@
+- name: dotfilesをclone
+  git:
+    repo: https://github.com/u1aryz/dotfiles.git
+    dest: ~/.config/dotfiles
+    depth: 1
+
+- name: dotfilesを配置
+  copy:
+    src: "~/.config/dotfiles/{{ item }}"
+    dest: ~/
+  with_items: "{{ files }}"
