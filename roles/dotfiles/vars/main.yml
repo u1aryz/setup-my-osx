@@ -1,5 +1,6 @@
 files:
-  - .config
-  - .gitconfig
-  - .hyper.js
-  - .tmux.conf
+  - { src: .fish/config.fish, dest: ~/.config/fish/config.fish }
+  - { src: .fish/fish_variables, dest: ~/.config/fish/fish_variables }
+  - { src: .gitconfig, dest: ~/.gitconfig }
+  - { src: .hyper.js, dest: ~/.hyper.js }
+  - { src: .tmux.conf, dest: ~/.tmux.conf }

@@ -4,8 +4,10 @@
     dest: ~/.config/dotfiles
     depth: 1
 
-- name: dotfilesを配置
-  copy:
-    src: "~/.config/dotfiles/{{ item }}"
-    dest: ~/
+- name: シンボリックリンクを作成
+  file:
+    src: "~/.config/dotfiles/{{ item.src }}"
+    dest: "{{ item.dest }}"
+    state: link
+    force: yes
   with_items: "{{ files }}"
