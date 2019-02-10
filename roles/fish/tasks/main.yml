@@ -24,21 +24,27 @@
     url: https://git.io/fisher
     dest: ~/.config/fish/functions/fisher.fish
 
-- name: Powerline fontsをclone
-  git:
-    repo: https://github.com/powerline/fonts.git
-    dest: ~/.config/powerlinefonts
-    depth: 1
-
 - name: Powerline fontsのインストールをチェック
   shell: ls ~/Library/Fonts/*Powerline.ttf
   register: fonts_ls_result
   failed_when: no
   changed_when: no
 
-- name: Powerline fontsをインストール
-  shell: ~/.config/powerlinefonts/install.sh
+- name: Powerline fontsをclone
+  git:
+    repo: https://github.com/powerline/fonts.git
+    dest: /tmp/powerlinefonts
+    depth: 1
   when: fonts_ls_result.rc != 0
+
+- name: Powerline fontsをインストール
+  shell: /tmp/powerlinefonts/install.sh
+  when: fonts_ls_result.rc != 0
+
+- name: Powerline fontsをクリーン
+  file:
+    path: /tmp/powerlinefonts
+    state: absent
 
 - name: fishのパッケージファイルを更新
   copy:
