@@ -68,11 +68,18 @@
   shell: killall Finder
   changed_when: no
 
-# トラックパッド関連
-- name: トラックパッドのタップでクリックを有効にする
+# トラックパッド関連(チェックボックスは反映されるが動作しない...)
+- name: トラックパッドのタップでクリックを有効にする(その1)
   osx_defaults:
     domain: com.apple.driver.AppleBluetoothMultitouch.trackpad
     key: Clicking
+    type: int
+    value: 1
+
+- name: トラックパッドのタップでクリックを有効にする(その2)
+  osx_defaults:
+    host: currentHost
+    domain: NSGlobalDomain
     type: int
     value: 1
 
