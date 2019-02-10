@@ -3,5 +3,3 @@ files:
   - .gitconfig
   - .hyper.js
   - .tmux.conf
-  - .vimrc
-  - .vim
