@@ -4,6 +4,11 @@
     dest: ~/.config/dotfiles
     depth: 1
 
+- name: karabinerのconfファイルを配置するディレクトリを作成
+  file:
+    path: ~/.config/karabiner
+    state: directory
+
 - name: シンボリックリンクを作成
   file:
     src: "~/.config/dotfiles/{{ item.src }}"

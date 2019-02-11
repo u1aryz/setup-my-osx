@@ -80,6 +80,7 @@
   osx_defaults:
     host: currentHost
     domain: NSGlobalDomain
+    key: com.apple.mouse.tapBehavior
     type: int
     value: 1
 
