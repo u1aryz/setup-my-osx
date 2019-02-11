@@ -1,8 +1,7 @@
 - name: dotfilesをclone
   git:
-    repo: https://github.com/u1aryz/dotfiles.git
+    repo: git@github.com:u1aryz/dotfiles.git
     dest: ~/.config/dotfiles
-    depth: 1
 
 - name: karabinerのconfファイルを配置するディレクトリを作成
   file:
