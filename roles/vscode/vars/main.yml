@@ -1,0 +1,4 @@
+vscode_plugins:
+  - christian-kohler.path-intellisense
+  - PKief.material-icon-theme
+  - yaruson.ascii-unicode-escape
