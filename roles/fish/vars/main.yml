@@ -3,3 +3,4 @@ fish_packages: |
   oh-my-fish/plugin-balias
   oh-my-fish/plugin-peco
   jethrokuan/fzf
+  jethrokuan/z
