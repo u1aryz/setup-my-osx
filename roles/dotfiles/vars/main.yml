@@ -1,6 +1,5 @@
 files:
   - { src: .fish/config.fish, dest: ~/.config/fish/config.fish }
-  - { src: .fish/fish_variables, dest: ~/.config/fish/fish_variables }
   - { src: .karabiner/karabiner.json, dest: ~/.config/karabiner/karabiner.json }
   - { src: .vscode/settings.json, dest: "/Users/u1aryz/Library/Application Support/Code/User/settings.json" }
   - { src: .gitconfig, dest: ~/.gitconfig }
