@@ -1,3 +1,9 @@
+- name: fishをインストール
+  homebrew:
+    name: fish
+    state: latest
+    update_homebrew: yes
+
 - name: fishを選択可能なシェルとして追加
   lineinfile:
     path: /etc/shells

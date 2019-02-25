@@ -2,8 +2,8 @@
   connection: local
   gather_facts: no
   roles:
-    - homebrew
     - fish
     - vscode
     - dotfiles
     - osx_defaults
+    - homebrew
