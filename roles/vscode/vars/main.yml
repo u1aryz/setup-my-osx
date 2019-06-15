@@ -3,3 +3,4 @@ vscode_plugins:
   - PKief.material-icon-theme
   - yaruson.ascii-unicode-escape
   - skyapps.fish-vscode
+  - sohamkamani.code-eol
