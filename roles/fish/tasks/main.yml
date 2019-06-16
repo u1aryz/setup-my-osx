@@ -20,6 +20,16 @@
   become: yes
   when: current_shell.stdout != "/usr/local/bin/fish"
 
+- name: fish completionsのインストール先を作成
+  file:
+    path: ~/.config/fish/completions
+    state: directory
+
+- name: git completionsをインストール
+  get_url:
+    url: https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/git.fish
+    dest: ~/.config/fish/completions/git.fish
+
 - name: fisherのインストール先を作成
   file:
     path: ~/.config/fish/functions
