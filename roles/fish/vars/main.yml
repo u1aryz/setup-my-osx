@@ -4,3 +4,4 @@ fish_packages: |
   jethrokuan/fzf
   jethrokuan/z
   decors/fish-ghq
+  laughedelic/fish_logo
