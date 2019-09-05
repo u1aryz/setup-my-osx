@@ -116,4 +116,4 @@
     domain: com.apple.screencapture
     key: disable-shadow
     type: bool
-    value: false
+    value: true
