@@ -1,5 +1,4 @@
 taps:
-  - AdoptOpenJDK/openjdk
   - mas-cli/tap
   - homebrew/cask-versions
 packages:
