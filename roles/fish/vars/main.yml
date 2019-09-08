@@ -5,3 +5,4 @@ fish_packages: |
   jethrokuan/z
   decors/fish-ghq
   laughedelic/fish_logo
+  jorgebucaran/fish-nvm
