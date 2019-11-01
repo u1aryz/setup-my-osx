@@ -2,6 +2,7 @@ taps:
   - mas-cli/tap
   - homebrew/cask-versions
 packages:
+  - { name: gcc }
   - { name: git }
   - { name: tig }
   - { name: mercurial }
