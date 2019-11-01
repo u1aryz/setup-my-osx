@@ -22,6 +22,7 @@ packages:
   - { name: fontconfig }
   - { name: mas }
   - { name: reattach-to-user-namespace }
+  - { name: fx }
 cask_packages:
   - { name: caffeine }
   - { name: adoptopenjdk8 }
