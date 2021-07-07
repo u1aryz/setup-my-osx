@@ -64,9 +64,9 @@
 
 - name: fishのパッケージファイルを更新
   copy:
-    dest: ~/.config/fish/fishfile
+    dest: ~/.config/fish/fish_plugins
     content: "{{ fish_packages }}"
 
 - name: fishのパッケージを更新
-  shell: fish -c fisher
+  shell: fish -c "fisher update"
   changed_when: no
