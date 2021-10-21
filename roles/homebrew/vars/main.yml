@@ -38,7 +38,7 @@ cask_packages:
   - { name: virtualbox }
   - { name: gimp }
   - { name: karabiner-elements }
-  - { name: google-backup-and-sync }
+  - { name: google-drive }
   - { name: flux }
   - { name: slack }
   - { name: vagrant }
