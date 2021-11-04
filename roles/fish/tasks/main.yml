@@ -7,7 +7,7 @@
 - name: fishを選択可能なシェルとして追加
   lineinfile:
     path: /etc/shells
-    line: /usr/local/bin/fish
+    line: /opt/homebrew/bin/fish
   become: yes
 
 - name: 既存のシェルを確認する
@@ -16,9 +16,9 @@
   changed_when: no
 
 - name: fishをデフォルトのシェルにする
-  shell: chsh -s /usr/local/bin/fish
+  shell: chsh -s /opt/homebrew/bin/fish
   become: yes
-  when: current_shell.stdout != "/usr/local/bin/fish"
+  when: current_shell.stdout != "/opt/homebrew/bin/fish"
 
 - name: fish completionsのインストール先を作成
   file:
