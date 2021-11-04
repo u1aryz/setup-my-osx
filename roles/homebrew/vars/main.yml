@@ -51,3 +51,4 @@ cask_packages:
   - { name: chromium }
   - { name: qfinder-pro }
   - { name: aerial }
+  - { name: bitwarden }
