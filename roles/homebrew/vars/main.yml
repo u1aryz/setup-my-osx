@@ -24,6 +24,9 @@ packages:
   - { name: mas }
   - { name: reattach-to-user-namespace }
   - { name: fx }
+  - { name: kubectl }
+  - { name: minikube }
+  - { name: helm }
 cask_packages:
   - { name: caffeine }
   - { name: adoptopenjdk8 }
@@ -52,3 +55,4 @@ cask_packages:
   - { name: qfinder-pro }
   - { name: aerial }
   - { name: bitwarden }
+  - { name: lens }

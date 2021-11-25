@@ -6,3 +6,4 @@ fish_packages: |
   decors/fish-ghq
   laughedelic/fish_logo
   jorgebucaran/nvm.fish
+  evanlucas/fish-kubectl-completions
