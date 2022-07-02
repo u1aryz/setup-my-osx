@@ -30,6 +30,7 @@ packages:
   - { name: cocoapods }
   - { name: dart }
   - { name: fvm }
+  - { name: lolcat }
 cask_packages:
   - { name: caffeine }
   - { name: adoptopenjdk8 }
