@@ -27,6 +27,9 @@ packages:
   - { name: kubectl }
   - { name: minikube }
   - { name: helm }
+  - { name: cocoapods }
+  - { name: dart }
+  - { name: fvm }
 cask_packages:
   - { name: caffeine }
   - { name: adoptopenjdk8 }
@@ -56,3 +59,4 @@ cask_packages:
   - { name: aerial }
   - { name: bitwarden }
   - { name: lens }
+  - { name: flutter }
