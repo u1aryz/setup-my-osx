@@ -21,7 +21,6 @@ packages:
   - { name: pyenv }
   - { name: openssl }
   - { name: fontconfig }
-  - { name: mas }
   - { name: reattach-to-user-namespace }
   - { name: fx }
   - { name: kubectl }
