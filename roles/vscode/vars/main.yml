@@ -9,3 +9,17 @@ vscode_plugins:
   - skyapps.fish-vscode
   # 改行コード表示
   - sohamkamani.code-eol
+  # Dockerプラグイン
+  - ms-azuretools.vscode-docker
+  # YAMLシンタックスハイライト
+  - redhat.vscode-yaml
+  # Terraformシンタックスハイライト
+  - hashicorp.terraform
+  # GraphQLプラグイン
+  - GraphQL.vscode-graphql
+  # TypeScriptプラグイン
+  - ms-vscode.vscode-typescript-next
+  # TypeScriptエラー表示支援
+  - yoavbls.pretty-ts-errors
+  # ChatGPTプラグイン
+  - genieai.chatgpt-vscode
