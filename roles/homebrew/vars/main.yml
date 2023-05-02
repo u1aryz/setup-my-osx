@@ -60,3 +60,4 @@ cask_packages:
   - { name: bitwarden }
   - { name: lens }
   - { name: flutter }
+  - { name: tableplus }
