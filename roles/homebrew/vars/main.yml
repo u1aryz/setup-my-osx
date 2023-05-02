@@ -4,7 +4,6 @@ taps:
 packages:
   - { name: gcc }
   - { name: git }
-  - { name: tig }
   - { name: mercurial }
   - { name: tree }
   - { name: wget }
