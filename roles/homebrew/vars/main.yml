@@ -33,7 +33,7 @@ packages:
 cask_packages:
   - { name: caffeine }
   - { name: adoptopenjdk8 }
-  - { name: alfred }
+  - { name: raycast }
   - { name: google-chrome }
   - { name: google-chrome-canary }
   - { name: google-cloud-sdk }
