@@ -1,6 +1,8 @@
 taps:
   - mas-cli/tap
   - homebrew/cask-versions
+  - leoafarias/fvm
+  - dart-lang/dart
 packages:
   - { name: gcc }
   - { name: git }
