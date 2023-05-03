@@ -30,6 +30,7 @@ packages:
   - { name: fvm }
   - { name: lolcat }
   - { name: cloudflared }
+  - { name: terraform }
 cask_packages:
   - { name: caffeine }
   - { name: adoptopenjdk8 }
