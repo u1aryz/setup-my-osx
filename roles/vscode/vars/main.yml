@@ -23,3 +23,7 @@ vscode_plugins:
   - yoavbls.pretty-ts-errors
   # ChatGPTプラグイン
   - genieai.chatgpt-vscode
+  # Goプラグイン
+  - golang.go
+  # Makefileプラグイン
+  - ms-vscode.makefile-tools
