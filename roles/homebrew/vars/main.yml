@@ -31,6 +31,7 @@ packages:
   - { name: lolcat }
   - { name: cloudflared }
   - { name: terraform }
+  - { name: pnpm }
 cask_packages:
   - { name: caffeine }
   - { name: adoptopenjdk8 }
