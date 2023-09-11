@@ -35,6 +35,11 @@
     url: https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/helm.fish
     dest: ~/.config/fish/completions/helm.fish
 
+- name: bun completionsをインストール
+  get_url:
+    url: https://raw.githubusercontent.com/oven-sh/bun/main/completions/bun.fish
+    dest: ~/.config/fish/completions/bun.fish
+
 - name: fisherのインストール先を作成
   file:
     path: ~/.config/fish/functions

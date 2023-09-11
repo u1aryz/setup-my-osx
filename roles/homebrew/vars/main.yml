@@ -3,6 +3,7 @@ taps:
   - homebrew/cask-versions
   - leoafarias/fvm
   - dart-lang/dart
+  - oven-sh/bun
 packages:
   - { name: gcc }
   - { name: git }
@@ -32,6 +33,7 @@ packages:
   - { name: cloudflared }
   - { name: terraform }
   - { name: exa }
+  - { name: bun }
 cask_packages:
   - { name: caffeine }
   - { name: adoptopenjdk8 }
