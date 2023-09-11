@@ -31,7 +31,6 @@ packages:
   - { name: lolcat }
   - { name: cloudflared }
   - { name: terraform }
-  - { name: pnpm }
   - { name: exa }
 cask_packages:
   - { name: caffeine }
