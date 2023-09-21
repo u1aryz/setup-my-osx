@@ -34,6 +34,7 @@ packages:
   - { name: terraform }
   - { name: exa }
   - { name: bun }
+  - { name: rust }
 cask_packages:
   - { name: caffeine }
   - { name: adoptopenjdk8 }
