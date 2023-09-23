@@ -25,3 +25,5 @@ vscode_plugins:
   - golang.go
   # Makefileプラグイン
   - ms-vscode.makefile-tools
+  # GitHub Copilotプラグイン
+  - GitHub.copilot
