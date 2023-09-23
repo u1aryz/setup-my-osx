@@ -14,7 +14,6 @@ packages:
   - { name: tmux }
   - { name: curl }
   - { name: yarn }
-  - { name: ag }
   - { name: ghq }
   - { name: fzf }
   - { name: fish }
