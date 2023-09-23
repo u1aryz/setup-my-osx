@@ -21,8 +21,6 @@ vscode_plugins:
   - ms-vscode.vscode-typescript-next
   # TypeScriptエラー表示支援
   - yoavbls.pretty-ts-errors
-  # ChatGPTプラグイン
-  - genieai.chatgpt-vscode
   # Goプラグイン
   - golang.go
   # Makefileプラグイン
