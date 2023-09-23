@@ -35,6 +35,7 @@ packages:
   - { name: bun }
   - { name: rust }
   - { name: ripgrep }
+  - { name: bat }
 cask_packages:
   - { name: caffeine }
   - { name: adoptopenjdk8 }
