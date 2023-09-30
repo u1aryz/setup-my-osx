@@ -69,3 +69,4 @@ cask_packages:
   - { name: flutter }
   - { name: tableplus }
   - { name: rustrover }
+  - { name: tailscale }
