@@ -68,3 +68,4 @@ cask_packages:
   - { name: lens }
   - { name: flutter }
   - { name: tableplus }
+  - { name: rustrover }
