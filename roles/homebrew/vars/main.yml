@@ -17,7 +17,6 @@ packages:
   - { name: ghq }
   - { name: fzf }
   - { name: fish }
-  - { name: pyenv }
   - { name: openssl }
   - { name: fontconfig }
   - { name: reattach-to-user-namespace }
