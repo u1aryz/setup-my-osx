@@ -38,6 +38,7 @@ packages:
   - { name: bat }
   - { name: fd }
   - { name: rtx }
+  - { name: coreutils }
 cask_packages:
   - { name: caffeine }
   - { name: adoptopenjdk8 }
