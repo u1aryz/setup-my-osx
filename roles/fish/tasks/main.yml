@@ -40,10 +40,10 @@
     url: https://raw.githubusercontent.com/oven-sh/bun/main/completions/bun.fish
     dest: ~/.config/fish/completions/bun.fish
 
-- name: rtx completionsをインストール
+- name: mise completionsをインストール
   get_url:
-    url: https://raw.githubusercontent.com/jdx/rtx/main/completions/rtx.fish
-    dest: ~/.config/fish/completions/rtx.fish
+    url: https://raw.githubusercontent.com/jdx/mise/main/completions/mise.fish
+    dest: ~/.config/fish/completions/mise.fish
 
 - name: fisherのインストール先を作成
   file:

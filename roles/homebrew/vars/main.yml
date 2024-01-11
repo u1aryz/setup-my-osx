@@ -36,7 +36,7 @@ packages:
   - { name: ripgrep }
   - { name: bat }
   - { name: fd }
-  - { name: rtx }
+  - { name: mise }
   - { name: coreutils }
 cask_packages:
   - { name: caffeine }
