@@ -30,7 +30,7 @@ packages:
   - { name: lolcat }
   - { name: cloudflared }
   - { name: terraform }
-  - { name: exa }
+  - { name: eza }
   - { name: bun }
   - { name: rust }
   - { name: ripgrep }
