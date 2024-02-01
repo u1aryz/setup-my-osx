@@ -72,3 +72,4 @@ cask_packages:
   - { name: tableplus }
   - { name: rustrover }
   - { name: tailscale }
+  - { name: warp }
