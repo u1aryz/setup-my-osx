@@ -38,6 +38,7 @@ packages:
   - { name: fd }
   - { name: mise }
   - { name: coreutils }
+  - { name: zellij }
 cask_packages:
   - { name: caffeine }
   - { name: adoptopenjdk8 }
