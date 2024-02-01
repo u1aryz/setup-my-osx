@@ -27,7 +27,7 @@
 
 - name: git completionsをインストール
   get_url:
-    url: https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/git.fish
+    url: https://raw.githubusercontent.com/fish-shell/fish-shell/3.7.0/share/completions/git.fish
     dest: ~/.config/fish/completions/git.fish
 
 - name: helm completionsをインストール
