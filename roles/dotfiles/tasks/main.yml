@@ -13,6 +13,11 @@
     path: ~/.config/karabiner
     state: directory
 
+- name: zellijのconfファイルを配置するディレクトリを作成
+  file:
+    path: ~/.config/zellij
+    state: directory
+
 - name: シンボリックリンクを作成
   file:
     src: "~/.config/dotfiles/{{ item.src }}"
