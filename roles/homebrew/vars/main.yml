@@ -24,7 +24,6 @@ packages:
   - { name: kubectl }
   - { name: minikube }
   - { name: helm }
-  - { name: cocoapods }
   - { name: dart }
   - { name: fvm }
   - { name: lolcat }
@@ -73,3 +72,4 @@ cask_packages:
   - { name: rustrover }
   - { name: tailscale }
   - { name: warp }
+  - { name: cocoapods }
