@@ -3,7 +3,6 @@ taps:
   - homebrew/cask-versions
   - leoafarias/fvm
   - dart-lang/dart
-  - oven-sh/bun
 packages:
   - { name: gcc }
   - { name: git }
@@ -30,7 +29,6 @@ packages:
   - { name: cloudflared }
   - { name: terraform }
   - { name: eza }
-  - { name: bun }
   - { name: rust }
   - { name: ripgrep }
   - { name: bat }
