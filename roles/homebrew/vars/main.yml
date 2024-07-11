@@ -3,6 +3,7 @@ taps:
   - homebrew/cask-versions
   - leoafarias/fvm
   - dart-lang/dart
+  - jdx/tap
 packages:
   - { name: gcc }
   - { name: git }
@@ -36,6 +37,7 @@ packages:
   - { name: mise }
   - { name: coreutils }
   - { name: zellij }
+  - { name: usage }
 cask_packages:
   - { name: caffeine }
   - { name: adoptopenjdk8 }
