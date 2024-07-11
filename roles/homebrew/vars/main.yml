@@ -13,7 +13,6 @@ packages:
   - { name: go }
   - { name: tmux }
   - { name: curl }
-  - { name: yarn }
   - { name: ghq }
   - { name: fzf }
   - { name: fish }
