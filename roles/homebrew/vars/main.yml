@@ -4,6 +4,7 @@ taps:
   - leoafarias/fvm
   - dart-lang/dart
   - jdx/tap
+  - fastly/tap
 packages:
   - { name: gcc }
   - { name: git }
@@ -37,6 +38,7 @@ packages:
   - { name: coreutils }
   - { name: zellij }
   - { name: usage }
+  - { name: fastly }
 cask_packages:
   - { name: caffeine }
   - { name: adoptopenjdk8 }
