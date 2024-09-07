@@ -39,6 +39,7 @@ packages:
   - { name: zellij }
   - { name: usage }
   - { name: fastly }
+  - { name: websocat }
 cask_packages:
   - { name: caffeine }
   - { name: adoptopenjdk8 }
