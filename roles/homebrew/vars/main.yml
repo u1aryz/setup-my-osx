@@ -75,3 +75,4 @@ cask_packages:
   - { name: tailscale }
   - { name: warp }
   - { name: cocoapods }
+  - { name: neohtop }
