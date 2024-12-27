@@ -41,6 +41,7 @@ packages:
   - { name: fastly }
   - { name: websocat }
   - { name: noti }
+  - { name: ghostty }
 cask_packages:
   - { name: caffeine }
   - { name: adoptopenjdk8 }
