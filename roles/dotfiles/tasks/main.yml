@@ -18,6 +18,11 @@
     path: ~/.config/zellij
     state: directory
 
+- name: ghosttyのconfファイルを配置するディレクトリを作成
+  file:
+    path: ~/.config/ghostty
+    state: directory
+
 - name: シンボリックリンクを作成
   file:
     src: "~/.config/dotfiles/{{ item.src }}"

@@ -6,3 +6,4 @@ files:
   - { src: .hyper.js, dest: ~/.hyper.js }
   - { src: .tmux.conf, dest: ~/.tmux.conf }
   - { src: .zellij/config.kdl, dest: ~/.config/zellij/config.kdl }
+  - { src: .ghostty/config, dest: ~/.config/ghostty/config }
