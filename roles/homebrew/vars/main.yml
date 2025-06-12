@@ -30,6 +30,7 @@ packages:
   - { name: lolcat }
   - { name: cloudflared }
   - { name: terraform }
+  - { name: prettier }
 cask_packages:
   - { name: caffeine }
   - { name: adoptopenjdk8 }
