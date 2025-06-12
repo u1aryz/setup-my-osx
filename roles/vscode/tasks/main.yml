@@ -7,4 +7,4 @@
 - name: vscodeのプラグインをインストール
   shell: "code --install-extension {{ item }}"
   with_items: "{{ vscode_plugins }}"
-  changed_when: no
+  changed_when: false

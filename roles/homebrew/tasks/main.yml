@@ -6,7 +6,7 @@
 
 - name: homebrewをアップデート
   homebrew:
-    update_homebrew: yes
+    update_homebrew: true
 
 - name: brewパッケージをインストール
   homebrew:
@@ -19,14 +19,14 @@
       lineinfile:
         path: /etc/sudoers
         line: "{{ user }} ALL=(ALL) NOPASSWD: ALL"
-      become: yes
-      changed_when: no
+      become: true
+      changed_when: false
     - name: caskパッケージをインストール
       homebrew_cask:
         name: "{{ item.name }}"
         state: installed
         install_options: "appdir=/Applications"
-      failed_when: no
+      failed_when: false
       with_items: "{{ cask_packages }}"
   always:
     - name: パスワードなしでsudoを許可の設定を削除
@@ -34,5 +34,5 @@
         path: /etc/sudoers
         line: "{{ user }} ALL=(ALL) NOPASSWD: ALL"
         state: absent
-      become: yes
-      changed_when: no
+      become: true
+      changed_when: false

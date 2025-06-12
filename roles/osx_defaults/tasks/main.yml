@@ -31,7 +31,7 @@
     value: 110
 - name: Dockを再起動
   shell: killall Dock
-  changed_when: no
+  changed_when: false
 
 # Finder関連
 - name: Finderですべての拡張子を表示する
@@ -66,7 +66,7 @@
     value: true
 - name: Finderを再起動
   shell: killall Finder
-  changed_when: no
+  changed_when: false
 
 # トラックパッド関連(チェックボックスは反映されるが動作しない...)
 - name: トラックパッドのタップでクリックを有効にする(その1)
