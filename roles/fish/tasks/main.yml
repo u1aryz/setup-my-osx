@@ -2,22 +2,22 @@
   homebrew:
     name: fish
     state: latest
-    update_homebrew: yes
+    update_homebrew: true
 
 - name: fishを選択可能なシェルとして追加
   lineinfile:
     path: /etc/shells
     line: /opt/homebrew/bin/fish
-  become: yes
+  become: true
 
 - name: 既存のシェルを確認する
   shell: echo $SHELL
   register: current_shell
-  changed_when: no
+  changed_when: false
 
 - name: fishをデフォルトのシェルにする
   shell: chsh -s /opt/homebrew/bin/fish
-  become: yes
+  become: true
   when: current_shell.stdout != "/opt/homebrew/bin/fish"
 
 - name: fish completionsのインストール先を作成
@@ -48,8 +48,8 @@
 - name: Powerline fontsのインストールをチェック
   shell: ls ~/Library/Fonts/*Powerline.ttf
   register: fonts_ls_result
-  failed_when: no
-  changed_when: no
+  failed_when: false
+  changed_when: false
 
 - name: Powerline fontsをclone
   git:
@@ -74,4 +74,4 @@
 
 - name: fishのパッケージを更新
   shell: fish -c "fisher update"
-  changed_when: no
+  changed_when: false

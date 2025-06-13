@@ -28,5 +28,5 @@
     src: "~/.config/dotfiles/{{ item.src }}"
     dest: "{{ item.dest }}"
     state: link
-    force: yes
+    force: true
   with_items: "{{ files }}"
