@@ -25,11 +25,6 @@
     path: ~/.config/fish/completions
     state: directory
 
-- name: git completionsをインストール
-  get_url:
-    url: https://raw.githubusercontent.com/fish-shell/fish-shell/3.7.0/share/completions/git.fish
-    dest: ~/.config/fish/completions/git.fish
-
 - name: helm completionsをインストール
   get_url:
     url: https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/helm.fish
