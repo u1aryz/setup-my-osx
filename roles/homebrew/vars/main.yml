@@ -44,7 +44,7 @@ packages:
   - { name: prettier }
 cask_packages:
   - { name: caffeine }
-  - { name: adoptopenjdk8 }
+  - { name: temurin8 }
   - { name: raycast }
   - { name: google-chrome }
   - { name: google-chrome-canary }
