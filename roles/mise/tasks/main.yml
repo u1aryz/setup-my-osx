@@ -1,0 +1,17 @@
+- name: miseをインストール
+  homebrew:
+    name: mise
+    state: latest
+    update_homebrew: true
+
+- name: fish completionsのインストール先を作成
+  file:
+    path: "{{ fish_completion_dir }}"
+    state: directory
+
+- name: mise補完スクリプト(mise.fish)を生成する
+  shell: mise completion fish > "{{ mise_completion_file }}"
+  args:
+    creates: "{{ mise_completion_file }}"
+  register: mise_completion_result
+  changed_when: mise_completion_result.rc == 0
