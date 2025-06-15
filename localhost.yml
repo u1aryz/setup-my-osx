@@ -2,9 +2,9 @@
   connection: local
   gather_facts: false
   roles:
-    - fish
-    - vscode
-    - dotfiles
-    - osx_defaults
-    - homebrew
-    - mise
+  - fish
+  - vscode
+  - dotfiles
+  - osx_defaults
+  - homebrew
+  - mise

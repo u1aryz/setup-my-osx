@@ -15,24 +15,24 @@
   with_items: "{{ packages }}"
 
 - block:
-    - name: パスワードなしでsudoを許可
-      lineinfile:
-        path: /etc/sudoers
-        line: "{{ user }} ALL=(ALL) NOPASSWD: ALL"
-      become: true
-      changed_when: false
-    - name: caskパッケージをインストール
-      homebrew_cask:
-        name: "{{ item.name }}"
-        state: installed
-        install_options: "appdir=/Applications"
-      failed_when: false
-      with_items: "{{ cask_packages }}"
+  - name: パスワードなしでsudoを許可
+    lineinfile:
+      path: /etc/sudoers
+      line: "{{ user }} ALL=(ALL) NOPASSWD: ALL"
+    become: true
+    changed_when: false
+  - name: caskパッケージをインストール
+    homebrew_cask:
+      name: "{{ item.name }}"
+      state: installed
+      install_options: "appdir=/Applications"
+    failed_when: false
+    with_items: "{{ cask_packages }}"
   always:
-    - name: パスワードなしでsudoを許可の設定を削除
-      lineinfile:
-        path: /etc/sudoers
-        line: "{{ user }} ALL=(ALL) NOPASSWD: ALL"
-        state: absent
-      become: true
-      changed_when: false
+  - name: パスワードなしでsudoを許可の設定を削除
+    lineinfile:
+      path: /etc/sudoers
+      line: "{{ user }} ALL=(ALL) NOPASSWD: ALL"
+      state: absent
+    become: true
+    changed_when: false

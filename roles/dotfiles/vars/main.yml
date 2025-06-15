@@ -1,9 +1,9 @@
 files:
-  - { src: .fish/config.fish, dest: ~/.config/fish/config.fish }
-  - { src: .karabiner/karabiner.json, dest: ~/.config/karabiner/karabiner.json }
-  - { src: .vscode/settings.json, dest: "~/Library/Application Support/Code/User/settings.json" }
-  - { src: .gitconfig, dest: ~/.gitconfig }
-  - { src: .hyper.js, dest: ~/.hyper.js }
-  - { src: .tmux.conf, dest: ~/.tmux.conf }
-  - { src: .zellij/config.kdl, dest: ~/.config/zellij/config.kdl }
-  - { src: .ghostty/config, dest: ~/.config/ghostty/config }
+- {src: .fish/config.fish, dest: ~/.config/fish/config.fish}
+- {src: .karabiner/karabiner.json, dest: ~/.config/karabiner/karabiner.json}
+- {src: .vscode/settings.json, dest: "~/Library/Application Support/Code/User/settings.json"}
+- {src: .gitconfig, dest: ~/.gitconfig}
+- {src: .hyper.js, dest: ~/.hyper.js}
+- {src: .tmux.conf, dest: ~/.tmux.conf}
+- {src: .zellij/config.kdl, dest: ~/.config/zellij/config.kdl}
+- {src: .ghostty/config, dest: ~/.config/ghostty/config}

@@ -1,81 +1,81 @@
 taps:
-  - mas-cli/tap
-  - leoafarias/fvm
-  - dart-lang/dart
-  - jdx/tap
-  - fastly/tap
+- mas-cli/tap
+- leoafarias/fvm
+- dart-lang/dart
+- jdx/tap
+- fastly/tap
 packages:
-  - { name: gcc }
-  - { name: git }
-  - { name: mercurial }
-  - { name: tree }
-  - { name: wget }
-  - { name: go }
-  - { name: tmux }
-  - { name: curl }
-  - { name: ghq }
-  - { name: fzf }
-  - { name: fish }
-  - { name: openssl }
-  - { name: fontconfig }
-  - { name: reattach-to-user-namespace }
-  - { name: fx }
-  - { name: kubectl }
-  - { name: minikube }
-  - { name: helm }
-  - { name: dart }
-  - { name: fvm }
-  - { name: lolcat }
-  - { name: cloudflared }
-  - { name: terraform }
-  - { name: eza }
-  - { name: rust }
-  - { name: ripgrep }
-  - { name: bat }
-  - { name: fd }
-  - { name: mise }
-  - { name: coreutils }
-  - { name: zellij }
-  - { name: usage }
-  - { name: fastly }
-  - { name: websocat }
-  - { name: noti }
-  - { name: ghostty }
-  - { name: prettier }
-  - { name: yamlfmt }
+- {name: gcc}
+- {name: git}
+- {name: mercurial}
+- {name: tree}
+- {name: wget}
+- {name: go}
+- {name: tmux}
+- {name: curl}
+- {name: ghq}
+- {name: fzf}
+- {name: fish}
+- {name: openssl}
+- {name: fontconfig}
+- {name: reattach-to-user-namespace}
+- {name: fx}
+- {name: kubectl}
+- {name: minikube}
+- {name: helm}
+- {name: dart}
+- {name: fvm}
+- {name: lolcat}
+- {name: cloudflared}
+- {name: terraform}
+- {name: eza}
+- {name: rust}
+- {name: ripgrep}
+- {name: bat}
+- {name: fd}
+- {name: mise}
+- {name: coreutils}
+- {name: zellij}
+- {name: usage}
+- {name: fastly}
+- {name: websocat}
+- {name: noti}
+- {name: ghostty}
+- {name: prettier}
+- {name: yamlfmt}
 cask_packages:
-  - { name: caffeine }
-  - { name: temurin8 }
-  - { name: raycast }
-  - { name: google-chrome }
-  - { name: google-chrome-canary }
-  - { name: google-cloud-sdk }
-  - { name: google-japanese-ime }
-  - { name: android-studio }
-  - { name: webstorm }
-  - { name: keyboardcleantool }
-  - { name: virtualbox }
-  - { name: gimp }
-  - { name: karabiner-elements }
-  - { name: google-drive }
-  - { name: flux }
-  - { name: slack }
-  - { name: vagrant }
-  - { name: visual-studio-code }
-  - { name: vlc }
-  - { name: insomnia }
-  - { name: hyper }
-  - { name: charles }
-  - { name: docker }
-  - { name: chromium }
-  - { name: qfinder-pro }
-  - { name: aerial }
-  - { name: bitwarden }
-  - { name: lens }
-  - { name: flutter }
-  - { name: tableplus }
-  - { name: rustrover }
-  - { name: tailscale }
-  - { name: warp }
-  - { name: cocoapods }
-  - { name: neohtop }
+- {name: caffeine}
+- {name: temurin8}
+- {name: raycast}
+- {name: google-chrome}
+- {name: google-chrome-canary}
+- {name: google-cloud-sdk}
+- {name: google-japanese-ime}
+- {name: android-studio}
+- {name: webstorm}
+- {name: keyboardcleantool}
+- {name: virtualbox}
+- {name: gimp}
+- {name: karabiner-elements}
+- {name: google-drive}
+- {name: flux}
+- {name: slack}
+- {name: vagrant}
+- {name: visual-studio-code}
+- {name: vlc}
+- {name: insomnia}
+- {name: hyper}
+- {name: charles}
+- {name: docker}
+- {name: chromium}
+- {name: qfinder-pro}
+- {name: aerial}
+- {name: bitwarden}
+- {name: lens}
+- {name: flutter}
+- {name: tableplus}
+- {name: rustrover}
+- {name: tailscale}
+- {name: warp}
+- {name: cocoapods}
+- {name: neohtop}

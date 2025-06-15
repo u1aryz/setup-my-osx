@@ -7,4 +7,4 @@ deploy:
 	ansible-playbook -i $(SCRIPT_DIR)/hosts $(SCRIPT_DIR)/localhost.yml --ask-become-pass -e "user=$(USER)"
 
 format:
-	prettier --write .
+	yamlfmt -formatter indentless_arrays=true,retain_line_breaks=true .
