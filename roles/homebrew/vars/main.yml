@@ -42,6 +42,7 @@ packages:
   - { name: noti }
   - { name: ghostty }
   - { name: prettier }
+  - { name: yamlfmt }
 cask_packages:
   - { name: caffeine }
   - { name: temurin8 }
