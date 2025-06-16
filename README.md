@@ -15,14 +15,18 @@
 
 ## 前提条件
 
-- `macOS`で動作します
-- デプロイするには以下がインストールされている必要があります
-  - `Xcode Command Line Tools`
-  - `Ansible`
-  - `Git`
-  - `Homebrew`
-- コード整形をする場合は以下がインストールされている必要があります
-  - `yamlfmt`
+### macOSで動作します
+
+### デプロイするには以下がインストールされている必要があります
+
+- `Xcode Command Line Tools`
+- `Ansible`
+- `Git`
+- `Homebrew`
+
+### コード整形をする場合は以下がインストールされている必要があります
+
+- `yamlfmt`
 
 ## デプロイ方法
 
