@@ -83,3 +83,4 @@ cask_packages:
 - {name: warp}
 - {name: cocoapods}
 - {name: neohtop}
+- {name: firefox@nightly}
