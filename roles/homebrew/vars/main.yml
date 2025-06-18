@@ -59,7 +59,6 @@ cask_packages:
 - {name: android-studio}
 - {name: webstorm}
 - {name: keyboardcleantool}
-- {name: virtualbox}
 - {name: gimp}
 - {name: karabiner-elements}
 - {name: google-drive}
