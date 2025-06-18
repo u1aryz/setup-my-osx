@@ -7,3 +7,4 @@ files:
 - {src: .tmux.conf, dest: ~/.tmux.conf}
 - {src: .zellij/config.kdl, dest: ~/.config/zellij/config.kdl}
 - {src: .ghostty/config, dest: ~/.config/ghostty/config}
+- {src: .docker/config.json, dest: ~/.docker/config.json}

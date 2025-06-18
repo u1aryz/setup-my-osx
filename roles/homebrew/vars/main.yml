@@ -43,6 +43,11 @@ packages:
 - {name: ghostty}
 - {name: prettier}
 - {name: yamlfmt}
+- {name: colima}
+- {name: docker}
+- {name: docker-compose}
+- {name: docker-buildx}
+- {name: dockerfmt}
 cask_packages:
 - {name: caffeine}
 - {name: temurin8}
@@ -66,7 +71,6 @@ cask_packages:
 - {name: insomnia}
 - {name: hyper}
 - {name: charles}
-- {name: docker}
 - {name: chromium}
 - {name: qfinder-pro}
 - {name: aerial}
