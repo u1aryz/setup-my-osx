@@ -23,6 +23,11 @@
     path: ~/.config/ghostty
     state: directory
 
+- name: dockerのconfファイルを配置するディレクトリを作成
+  file:
+    path: ~/.docker
+    state: directory
+
 - name: シンボリックリンクを作成
   file:
     src: "~/.config/dotfiles/{{ item.src }}"
