@@ -10,15 +10,19 @@
     line: /opt/homebrew/bin/fish
   become: true
 
-- name: 既存のシェルを確認する
-  shell: echo $SHELL
-  register: current_shell
-  changed_when: false
-
-- name: fishをデフォルトのシェルにする
-  shell: chsh -s /opt/homebrew/bin/fish
+- name: 現在のデフォルトシェルを取得
+  command: dscl . -read /Users/{{ ansible_user_id }} UserShell
+  register: current_shell_raw
   become: true
-  when: current_shell.stdout != "/opt/homebrew/bin/fish"
+
+- name: 現在のシェルを整形
+  set_fact:
+    current_shell: "{{ current_shell_raw.stdout.split(' ')[-1] }}"
+
+- name: fishをデフォルトのシェルにする (macOS用)
+  shell: dscl . -change /Users/{{ ansible_user_id }} UserShell {{ current_shell }} /opt/homebrew/bin/fish
+  become: true
+  when: current_shell != "/opt/homebrew/bin/fish"
 
 - name: fish completionsのインストール先を作成
   file:
