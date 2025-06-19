@@ -109,6 +109,12 @@
     key: InitialKeyRepeat
     type: int
     value: "{{ ( 375 / 15 ) | int }}"
+- name: 日本語のライブ変換をOFFにする
+  osx_defaults:
+    domain: com.apple.inputmethod.Kotoeri
+    key: JIMPrefLiveConversionKey
+    type: bool
+    value: false
 
 # スクリーンキャプチャ関連
 - name: スクリーンキャプチャに影を付けない
