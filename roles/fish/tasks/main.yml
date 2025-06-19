@@ -67,6 +67,7 @@
     repo: https://github.com/powerline/fonts.git
     dest: /tmp/powerlinefonts
     depth: 1
+    version: master
   when: fonts_ls_result.rc != 0
 
 - name: Powerline fontsをインストール
