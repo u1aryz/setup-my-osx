@@ -6,7 +6,7 @@
   pre_tasks:
   - name: community.generalをインストール
     ansible.builtin.command:
-      cmd: ansible-galaxy collection install community.general -p ~/.ansible/collections
+      cmd: ansible-galaxy collection install -r requirements.yml -p ~/.ansible/collections
     changed_when: false
     delegate_to: localhost
 
