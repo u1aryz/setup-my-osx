@@ -49,6 +49,7 @@ homebrew_packages:
   - { name: docker-buildx }
   - { name: dockerfmt }
   - { name: ansible-lint }
+  - { name: ffmpeg }
 homebrew_cask_packages:
   - { name: caffeine }
   - { name: raycast }
