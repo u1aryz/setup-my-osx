@@ -1,41 +1,42 @@
+---
 - name: confファイルを配置するrootディレクトリを作成
-  file:
+  ansible.builtin.file:
     path: ~/.config
     state: directory
-    mode: '0755'
+    mode: "0755"
 
 - name: dotfilesをclone
-  git:
+  ansible.builtin.git:
     repo: git@github.com:u1aryz/dotfiles.git
     dest: ~/.config/dotfiles
     version: main
 
 - name: karabinerのconfファイルを配置するディレクトリを作成
-  file:
+  ansible.builtin.file:
     path: ~/.config/karabiner
     state: directory
-    mode: '0755'
+    mode: "0755"
 
 - name: zellijのconfファイルを配置するディレクトリを作成
-  file:
+  ansible.builtin.file:
     path: ~/.config/zellij
     state: directory
-    mode: '0755'
+    mode: "0755"
 
 - name: ghosttyのconfファイルを配置するディレクトリを作成
-  file:
+  ansible.builtin.file:
     path: ~/.config/ghostty
     state: directory
-    mode: '0755'
+    mode: "0755"
 
 - name: dockerのconfファイルを配置するディレクトリを作成
-  file:
+  ansible.builtin.file:
     path: ~/.docker
     state: directory
-    mode: '0755'
+    mode: "0755"
 
 - name: シンボリックリンクを作成
-  file:
+  ansible.builtin.file:
     src: "~/.config/dotfiles/{{ item.src }}"
     dest: "{{ item.dest }}"
     state: link

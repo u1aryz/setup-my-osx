@@ -1,17 +1,18 @@
+---
 - name: miseをインストール
-  homebrew:
+  community.general.homebrew:
     name: mise
     state: latest
     update_homebrew: true
 
 - name: fish completionsのインストール先を作成
-  file:
+  ansible.builtin.file:
     path: "{{ mise_fish_completion_dir }}"
     state: directory
-    mode: '0755'
+    mode: "0755"
 
 - name: mise補完スクリプト(mise.fish)を生成する
-  shell: mise completion fish > "{{ mise_completion_file }}"
+  ansible.builtin.shell: mise completion fish > "{{ mise_completion_file }}"
   args:
     creates: "{{ mise_completion_file }}"
   register: mise_completion_result

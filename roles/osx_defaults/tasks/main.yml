@@ -1,83 +1,84 @@
+---
 # Dock関連
 - name: Dockを自動的に隠す
-  osx_defaults:
+  community.general.osx_defaults:
     domain: com.apple.dock
     key: autohide
     type: bool
     value: true
 - name: Dockをdelayなしで表示・非表示させる
-  osx_defaults:
+  community.general.osx_defaults:
     domain: com.apple.dock
     key: autohide-delay
     type: float
     value: 0
 - name: Dockの表示アニメーションを0.7にする
-  osx_defaults:
+  community.general.osx_defaults:
     domain: com.apple.dock
     key: autohide-time-modifier
     type: float
     value: 0.7
 - name: Dockをオンマウスでアイコンサイズをズームにする
-  osx_defaults:
+  community.general.osx_defaults:
     domain: com.apple.dock
     key: magnification
     type: bool
     value: true
 - name: Dockのアイコン拡大サイズを110にする
-  osx_defaults:
+  community.general.osx_defaults:
     domain: com.apple.dock
     key: largesize
     type: int
     value: 110
 - name: Dockを再起動
-  shell: killall Dock
+  ansible.builtin.command: killall Dock
   changed_when: false
 
 # Finder関連
 - name: Finderですべての拡張子を表示する
-  osx_defaults:
+  community.general.osx_defaults:
     domain: NSGlobalDomain
     key: AppleShowAllExtensions
     type: bool
     value: true
 - name: Finderで拡張子の変更を警告しない
-  osx_defaults:
+  community.general.osx_defaults:
     domain: com.apple.finder
     key: FXEnableExtensionChangeWarning
     type: bool
     value: false
 - name: Finderで検索対象のデフォルトをカレントディレクトリにする
-  osx_defaults:
+  community.general.osx_defaults:
     domain: com.apple.finder
     key: FXDefaultSearchScope
     type: string
     value: SCcf
 - name: Finderでステータスバーを表示する
-  osx_defaults:
+  community.general.osx_defaults:
     domain: com.apple.finder
     key: ShowStatusBar
     type: bool
     value: true
 - name: Finderでタイトルをフルパス表示にする
-  osx_defaults:
+  community.general.osx_defaults:
     domain: com.apple.finder
     key: _FXShowPosixPathInTitle
     type: bool
     value: true
 - name: Finderを再起動
-  shell: killall Finder
+  ansible.builtin.command: killall Finder
   changed_when: false
 
 # トラックパッド関連(チェックボックスは反映されるが動作しない...)
 - name: トラックパッドのタップでクリックを有効にする(その1)
-  osx_defaults:
+  community.general.osx_defaults:
     domain: com.apple.driver.AppleBluetoothMultitouch.trackpad
     key: Clicking
     type: int
     value: 1
 
 - name: トラックパッドのタップでクリックを有効にする(その2)
-  osx_defaults:
+  community.general.osx_defaults:
     host: currentHost
     domain: NSGlobalDomain
     key: com.apple.mouse.tapBehavior
@@ -86,31 +87,31 @@
 
 # キーボード関連
 - name: フルキーボードアクセスを有効にする
-  osx_defaults:
+  community.general.osx_defaults:
     domain: NSGlobalDomain
     key: AppleKeyboardUIMode
     type: int
     value: 3
 - name: F1~F12を標準のファンクションキーとして使用
-  osx_defaults:
+  community.general.osx_defaults:
     domain: NSGlobalDomain
     key: com.apple.keyboard.fnState
     type: bool
     value: true
 - name: キーのリピート速度を30msにする
-  osx_defaults:
+  community.general.osx_defaults:
     domain: NSGlobalDomain
     key: KeyRepeat
     type: int
-    value: "{{ ( 30 / 15 ) | int }}"
+    value: "{{ (30 / 15) | int }}"
 - name: リピート入力認識までの時間を375msにする
-  osx_defaults:
+  community.general.osx_defaults:
     domain: NSGlobalDomain
     key: InitialKeyRepeat
     type: int
-    value: "{{ ( 375 / 15 ) | int }}"
+    value: "{{ (375 / 15) | int }}"
 - name: 日本語のライブ変換をOFFにする
-  osx_defaults:
+  community.general.osx_defaults:
     domain: com.apple.inputmethod.Kotoeri
     key: JIMPrefLiveConversionKey
     type: bool
@@ -118,7 +119,7 @@
 
 # スクリーンキャプチャ関連
 - name: スクリーンキャプチャに影を付けない
-  osx_defaults:
+  community.general.osx_defaults:
     domain: com.apple.screencapture
     key: disable-shadow
     type: bool

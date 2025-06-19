@@ -1,15 +1,16 @@
+---
 - name: homebrewのtabリポジトリを追加
-  homebrew_tap:
+  community.general.homebrew_tap:
     tap: "{{ item }}"
     state: present
   with_items: "{{ homebrew_taps }}"
 
 - name: homebrewをアップデート
-  homebrew:
+  community.general.homebrew:
     update_homebrew: true
 
 - name: brewパッケージをインストール
-  homebrew:
+  community.general.homebrew:
     name: "{{ item.name }}"
     state: latest
   with_items: "{{ homebrew_packages }}"
@@ -19,25 +20,26 @@
     name: colima
     state: present
 
-- block:
-  - name: パスワードなしでsudoを許可
-    lineinfile:
-      path: /etc/sudoers
-      line: "{{ user }} ALL=(ALL) NOPASSWD: ALL"
-    become: true
-    changed_when: false
-  - name: caskパッケージをインストール
-    homebrew_cask:
-      name: "{{ item.name }}"
-      state: installed
-      install_options: "appdir=/Applications"
-    failed_when: false
-    with_items: "{{ homebrew_cask_packages }}"
+- name: パスワードなしsudoを一時的に許可してcaskインストール
+  block:
+    - name: パスワードなしでsudoを許可
+      ansible.builtin.lineinfile:
+        path: /etc/sudoers
+        line: "{{ user }} ALL=(ALL) NOPASSWD: ALL"
+      become: true
+      changed_when: false
+    - name: caskパッケージをインストール
+      community.general.homebrew_cask:
+        name: "{{ item.name }}"
+        state: installed
+        install_options: "appdir=/Applications"
+      failed_when: false
+      with_items: "{{ homebrew_cask_packages }}"
   always:
-  - name: パスワードなしでsudoを許可の設定を削除
-    lineinfile:
-      path: /etc/sudoers
-      line: "{{ user }} ALL=(ALL) NOPASSWD: ALL"
-      state: absent
-    become: true
-    changed_when: false
+    - name: パスワードなしでsudoを許可の設定を削除
+      ansible.builtin.lineinfile:
+        path: /etc/sudoers
+        line: "{{ user }} ALL=(ALL) NOPASSWD: ALL"
+        state: absent
+      become: true
+      changed_when: false

@@ -1,78 +1,79 @@
+---
 homebrew_taps:
-- leoafarias/fvm
-- dart-lang/dart
-- jdx/tap
-- fastly/tap
+  - leoafarias/fvm
+  - dart-lang/dart
+  - jdx/tap
+  - fastly/tap
 homebrew_packages:
-- {name: gcc}
-- {name: git}
-- {name: mercurial}
-- {name: tree}
-- {name: wget}
-- {name: go}
-- {name: tmux}
-- {name: curl}
-- {name: ghq}
-- {name: fzf}
-- {name: fish}
-- {name: openssl}
-- {name: fontconfig}
-- {name: reattach-to-user-namespace}
-- {name: fx}
-- {name: kubectl}
-- {name: minikube}
-- {name: helm}
-- {name: dart}
-- {name: fvm}
-- {name: lolcat}
-- {name: cloudflared}
-- {name: terraform}
-- {name: eza}
-- {name: rust}
-- {name: ripgrep}
-- {name: bat}
-- {name: fd}
-- {name: mise}
-- {name: coreutils}
-- {name: zellij}
-- {name: usage}
-- {name: fastly}
-- {name: websocat}
-- {name: noti}
-- {name: ghostty}
-- {name: prettier}
-- {name: yamlfmt}
-- {name: colima}
-- {name: docker}
-- {name: docker-compose}
-- {name: docker-buildx}
-- {name: dockerfmt}
-- {name: ansible-lint}
+  - { name: gcc }
+  - { name: git }
+  - { name: mercurial }
+  - { name: tree }
+  - { name: wget }
+  - { name: go }
+  - { name: tmux }
+  - { name: curl }
+  - { name: ghq }
+  - { name: fzf }
+  - { name: fish }
+  - { name: openssl }
+  - { name: fontconfig }
+  - { name: reattach-to-user-namespace }
+  - { name: fx }
+  - { name: kubectl }
+  - { name: minikube }
+  - { name: helm }
+  - { name: dart }
+  - { name: fvm }
+  - { name: lolcat }
+  - { name: cloudflared }
+  - { name: terraform }
+  - { name: eza }
+  - { name: rust }
+  - { name: ripgrep }
+  - { name: bat }
+  - { name: fd }
+  - { name: mise }
+  - { name: coreutils }
+  - { name: zellij }
+  - { name: usage }
+  - { name: fastly }
+  - { name: websocat }
+  - { name: noti }
+  - { name: ghostty }
+  - { name: prettier }
+  - { name: yamlfmt }
+  - { name: colima }
+  - { name: docker }
+  - { name: docker-compose }
+  - { name: docker-buildx }
+  - { name: dockerfmt }
+  - { name: ansible-lint }
 homebrew_cask_packages:
-- {name: caffeine}
-- {name: raycast}
-- {name: google-chrome}
-- {name: google-cloud-sdk}
-- {name: android-studio}
-- {name: webstorm}
-- {name: keyboardcleantool}
-- {name: gimp}
-- {name: karabiner-elements}
-- {name: google-drive}
-- {name: flux}
-- {name: slack}
-- {name: visual-studio-code}
-- {name: vlc}
-- {name: insomnia}
-- {name: hyper}
-- {name: charles}
-- {name: qfinder-pro}
-- {name: aerial}
-- {name: bitwarden}
-- {name: lens}
-- {name: flutter}
-- {name: tableplus}
-- {name: rustrover}
-- {name: tailscale}
-- {name: neohtop}
-- {name: firefox@nightly}
+  - { name: caffeine }
+  - { name: raycast }
+  - { name: google-chrome }
+  - { name: google-cloud-sdk }
+  - { name: android-studio }
+  - { name: webstorm }
+  - { name: keyboardcleantool }
+  - { name: gimp }
+  - { name: karabiner-elements }
+  - { name: google-drive }
+  - { name: flux }
+  - { name: slack }
+  - { name: visual-studio-code }
+  - { name: vlc }
+  - { name: insomnia }
+  - { name: hyper }
+  - { name: charles }
+  - { name: qfinder-pro }
+  - { name: aerial }
+  - { name: bitwarden }
+  - { name: lens }
+  - { name: flutter }
+  - { name: tableplus }
+  - { name: rustrover }
+  - { name: tailscale }
+  - { name: neohtop }
+  - { name: firefox@nightly }

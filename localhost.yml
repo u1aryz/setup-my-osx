@@ -1,19 +1,20 @@
+---
 - name: macOSセットアップ
   hosts: localhost
   connection: local
   gather_facts: true
 
   pre_tasks:
-  - name: community.generalをインストール
-    ansible.builtin.command:
-      cmd: ansible-galaxy collection install -r requirements.yml -p ~/.ansible/collections
-    changed_when: false
-    delegate_to: localhost
+    - name: community.generalをインストール
+      ansible.builtin.command:
+        cmd: ansible-galaxy collection install -r requirements.yml -p ~/.ansible/collections
+      changed_when: false
+      delegate_to: localhost
 
   roles:
-  - fish
-  - vscode
-  - dotfiles
-  - osx_defaults
-  - homebrew
-  - mise
+    - fish
+    - vscode
+    - dotfiles
+    - osx_defaults
+    - homebrew
+    - mise
