@@ -30,26 +30,31 @@
   file:
     path: ~/.config/fish/completions
     state: directory
+    mode: '0755'
 
 - name: helm completionsをインストール
   get_url:
     url: https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/helm.fish
     dest: ~/.config/fish/completions/helm.fish
+    mode: '0644'
 
 - name: bun completionsをインストール
   get_url:
     url: https://raw.githubusercontent.com/oven-sh/bun/main/completions/bun.fish
     dest: ~/.config/fish/completions/bun.fish
+    mode: '0644'
 
 - name: fisherのインストール先を作成
   file:
     path: ~/.config/fish/functions
     state: directory
+    mode: '0755'
 
 - name: fisherをインストール
   get_url:
     url: https://git.io/fisher
     dest: ~/.config/fish/functions/fisher.fish
+    mode: '0644'
 
 - name: Powerline fontsのインストールをチェック
   shell: ls ~/Library/Fonts/*Powerline.ttf
@@ -78,6 +83,7 @@
   copy:
     dest: ~/.config/fish/fish_plugins
     content: "{{ fish_packages }}"
+    mode: '0644'
 
 - name: fishのパッケージを更新
   shell: fish -c "fisher update"

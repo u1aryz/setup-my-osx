@@ -8,6 +8,7 @@
   file:
     path: "{{ mise_fish_completion_dir }}"
     state: directory
+    mode: '0755'
 
 - name: mise補完スクリプト(mise.fish)を生成する
   shell: mise completion fish > "{{ mise_completion_file }}"
