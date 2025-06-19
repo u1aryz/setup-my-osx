@@ -1,2 +1,2 @@
-fish_completion_dir: "{{ lookup('env', 'HOME') }}/.config/fish/completions"
-mise_completion_file: "{{ fish_completion_dir }}/mise.fish"
+mise_fish_completion_dir: "{{ lookup('env', 'HOME') }}/.config/fish/completions"
+mise_completion_file: "{{ mise_fish_completion_dir }}/mise.fish"

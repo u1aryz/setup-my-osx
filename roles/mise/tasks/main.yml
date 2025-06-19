@@ -6,7 +6,7 @@
 
 - name: fish completionsのインストール先を作成
   file:
-    path: "{{ fish_completion_dir }}"
+    path: "{{ mise_fish_completion_dir }}"
     state: directory
 
 - name: mise補完スクリプト(mise.fish)を生成する

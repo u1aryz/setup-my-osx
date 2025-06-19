@@ -40,4 +40,4 @@
     dest: "{{ item.dest }}"
     state: link
     force: true
-  with_items: "{{ files }}"
+  with_items: "{{ dotfiles_files }}"

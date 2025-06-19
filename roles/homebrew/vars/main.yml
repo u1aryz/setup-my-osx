@@ -1,9 +1,9 @@
-taps:
+homebrew_taps:
 - leoafarias/fvm
 - dart-lang/dart
 - jdx/tap
 - fastly/tap
-packages:
+homebrew_packages:
 - {name: gcc}
 - {name: git}
 - {name: mercurial}
@@ -48,7 +48,7 @@ packages:
 - {name: docker-buildx}
 - {name: dockerfmt}
 - {name: ansible-lint}
-cask_packages:
+homebrew_cask_packages:
 - {name: caffeine}
 - {name: raycast}
 - {name: google-chrome}

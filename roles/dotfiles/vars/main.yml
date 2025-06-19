@@ -1,4 +1,4 @@
-files:
+dotfiles_files:
 - {src: .fish/config.fish, dest: ~/.config/fish/config.fish}
 - {src: .karabiner/karabiner.json, dest: ~/.config/karabiner/karabiner.json}
 - {src: .vscode/settings.json, dest: "~/Library/Application Support/Code/User/settings.json"}

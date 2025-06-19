@@ -2,7 +2,7 @@
   homebrew_tap:
     tap: "{{ item }}"
     state: present
-  with_items: "{{ taps }}"
+  with_items: "{{ homebrew_taps }}"
 
 - name: homebrewをアップデート
   homebrew:
@@ -12,7 +12,7 @@
   homebrew:
     name: "{{ item.name }}"
     state: latest
-  with_items: "{{ packages }}"
+  with_items: "{{ homebrew_packages }}"
 
 - name: ログイン時にColimaを自動起動する
   community.general.homebrew_services:
@@ -32,7 +32,7 @@
       state: installed
       install_options: "appdir=/Applications"
     failed_when: false
-    with_items: "{{ cask_packages }}"
+    with_items: "{{ homebrew_cask_packages }}"
   always:
   - name: パスワードなしでsudoを許可の設定を削除
     lineinfile:
