@@ -51,9 +51,7 @@ cask_packages:
 - {name: caffeine}
 - {name: raycast}
 - {name: google-chrome}
-- {name: google-chrome-canary}
 - {name: google-cloud-sdk}
-- {name: google-japanese-ime}
 - {name: android-studio}
 - {name: webstorm}
 - {name: keyboardcleantool}
@@ -67,7 +65,6 @@ cask_packages:
 - {name: insomnia}
 - {name: hyper}
 - {name: charles}
-- {name: chromium}
 - {name: qfinder-pro}
 - {name: aerial}
 - {name: bitwarden}
@@ -76,7 +73,5 @@ cask_packages:
 - {name: tableplus}
 - {name: rustrover}
 - {name: tailscale}
-- {name: warp}
-- {name: cocoapods}
 - {name: neohtop}
 - {name: firefox@nightly}
