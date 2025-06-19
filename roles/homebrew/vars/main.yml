@@ -1,5 +1,4 @@
 taps:
-- mas-cli/tap
 - leoafarias/fvm
 - dart-lang/dart
 - jdx/tap
