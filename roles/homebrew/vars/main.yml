@@ -78,3 +78,4 @@ homebrew_cask_packages:
   - { name: tailscale }
   - { name: neohtop }
   - { name: firefox@nightly }
+  - { name: jiggler }
