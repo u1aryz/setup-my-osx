@@ -47,6 +47,7 @@ packages:
 - {name: docker-compose}
 - {name: docker-buildx}
 - {name: dockerfmt}
+- {name: ansible-lint}
 cask_packages:
 - {name: caffeine}
 - {name: raycast}
