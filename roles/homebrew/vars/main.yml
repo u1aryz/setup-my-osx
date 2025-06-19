@@ -64,7 +64,6 @@ cask_packages:
 - {name: google-drive}
 - {name: flux}
 - {name: slack}
-- {name: vagrant}
 - {name: visual-studio-code}
 - {name: vlc}
 - {name: insomnia}
