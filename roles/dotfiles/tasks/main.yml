@@ -8,6 +8,7 @@
   git:
     repo: git@github.com:u1aryz/dotfiles.git
     dest: ~/.config/dotfiles
+    version: main
 
 - name: karabinerのconfファイルを配置するディレクトリを作成
   file:
