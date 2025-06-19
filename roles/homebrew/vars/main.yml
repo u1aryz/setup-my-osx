@@ -49,7 +49,6 @@ packages:
 - {name: dockerfmt}
 cask_packages:
 - {name: caffeine}
-- {name: temurin8}
 - {name: raycast}
 - {name: google-chrome}
 - {name: google-chrome-canary}
