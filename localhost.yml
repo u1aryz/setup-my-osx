@@ -1,6 +1,14 @@
 - hosts: localhost
   connection: local
   gather_facts: true
+
+  pre_tasks:
+  - name: community.generalをインストール
+    ansible.builtin.command:
+      cmd: ansible-galaxy collection install community.general -p ~/.ansible/collections
+    changed_when: false
+    delegate_to: localhost
+
   roles:
   - fish
   - vscode
