@@ -9,3 +9,4 @@ dotfiles_files:
   - { src: .zellij/config.kdl, dest: ~/.config/zellij/config.kdl }
   - { src: .ghostty/config, dest: ~/.config/ghostty/config }
   - { src: .docker/config.json, dest: ~/.docker/config.json }
+  - { src: .mise/config.toml, dest: ~/.config/mise/config.toml }
