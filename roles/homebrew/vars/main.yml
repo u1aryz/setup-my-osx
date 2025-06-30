@@ -50,6 +50,7 @@ homebrew_packages:
   - { name: dockerfmt }
   - { name: ansible-lint }
   - { name: ffmpeg }
+  - { name: taplo }
 homebrew_cask_packages:
   - { name: caffeine }
   - { name: raycast }
