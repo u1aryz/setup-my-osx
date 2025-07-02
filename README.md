@@ -13,16 +13,19 @@
 - Homebrew
 - mise
 
-## 前提条件
+## 必要条件
 
 ### macOSで動作します
 
 ### デプロイするには以下がインストールされている必要があります
 
-- `Xcode Command Line Tools`
-- `Ansible`
-- `Git`
+> [!NOTE]
+> `Homebrew`インストール時に`Xcode Command Line Tools`と`Git`も同時にインストールされます。
+
 - `Homebrew`
+- `Xcode Command Line Tools`
+- `Git`
+- `Ansible`
 
 ### コード整形をする場合は以下がインストールされている必要があります
 
