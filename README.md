@@ -26,7 +26,7 @@
 
 ### コード整形をする場合は以下がインストールされている必要があります
 
-- `yamlfmt`
+- `ansible-lint`
 
 ## デプロイ方法
 
@@ -42,4 +42,4 @@ make deploy
 make format
 ```
 
-これにより`yamlfmt`を使用してYAMLが整形されます。
+これにより`ansible-lint`を使用してYAMLが整形されます。
