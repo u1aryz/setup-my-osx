@@ -10,7 +10,6 @@ homebrew_packages:
   - { name: mercurial }
   - { name: tree }
   - { name: wget }
-  - { name: go }
   - { name: tmux }
   - { name: curl }
   - { name: ghq }
@@ -27,7 +26,6 @@ homebrew_packages:
   - { name: fvm }
   - { name: lolcat }
   - { name: cloudflared }
-  - { name: terraform }
   - { name: eza }
   - { name: rust }
   - { name: ripgrep }
