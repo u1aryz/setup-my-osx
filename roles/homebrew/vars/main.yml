@@ -51,6 +51,7 @@ homebrew_packages:
   - { name: taplo }
   - { name: awscli }
   - { name: graphviz }
+  - { name: yt-dlp }
 homebrew_cask_packages:
   - { name: caffeine }
   - { name: raycast }
