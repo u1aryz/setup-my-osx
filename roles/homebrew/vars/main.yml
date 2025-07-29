@@ -81,3 +81,4 @@ homebrew_cask_packages:
   - { name: neohtop }
   - { name: firefox@nightly }
   - { name: jiggler }
+  - { name: container }
