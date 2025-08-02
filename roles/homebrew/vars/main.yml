@@ -82,3 +82,4 @@ homebrew_cask_packages:
   - { name: firefox@nightly }
   - { name: jiggler }
   - { name: container }
+  - { name: raspberry-pi-imager }
