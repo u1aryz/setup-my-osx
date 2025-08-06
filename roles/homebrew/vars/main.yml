@@ -83,3 +83,4 @@ homebrew_cask_packages:
   - { name: jiggler }
   - { name: container }
   - { name: raspberry-pi-imager }
+  - { name: azooKey }
