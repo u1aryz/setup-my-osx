@@ -53,7 +53,6 @@ homebrew_packages:
   - { name: graphviz }
   - { name: yt-dlp }
 homebrew_cask_packages:
-  - { name: caffeine }
   - { name: raycast }
   - { name: google-chrome }
   - { name: google-cloud-sdk }
