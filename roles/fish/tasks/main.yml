@@ -13,18 +13,18 @@
 
 - name: 現在のデフォルトシェルを取得
   ansible.builtin.command: dscl . -read /Users/{{ ansible_user_id }} UserShell
-  register: current_shell_raw
+  register: fish_current_shell_raw
   become: true
   changed_when: false
 
 - name: 現在のシェルを整形
   ansible.builtin.set_fact:
-    current_shell: "{{ current_shell_raw.stdout.split(' ')[-1] }}"
+    fish_current_shell: "{{ fish_current_shell_raw.stdout.split(' ')[-1] }}"
 
 - name: fishをデフォルトのシェルにする (macOS用)
-  ansible.builtin.command: dscl . -change /Users/{{ ansible_user_id }} UserShell {{ current_shell }} /opt/homebrew/bin/fish
+  ansible.builtin.command: dscl . -change /Users/{{ ansible_user_id }} UserShell {{ fish_current_shell }} /opt/homebrew/bin/fish
   become: true
-  when: current_shell != "/opt/homebrew/bin/fish"
+  when: fish_current_shell != "/opt/homebrew/bin/fish"
   changed_when: false
 
 - name: fish completionsのインストール先を作成
@@ -59,7 +59,7 @@
 
 - name: Powerline fontsのインストールをチェック
   ansible.builtin.shell: ls ~/Library/Fonts/*Powerline.ttf
-  register: fonts_ls_result
+  register: fish_fonts_ls_result
   failed_when: false
   changed_when: false
 
@@ -69,11 +69,11 @@
     dest: /tmp/powerlinefonts
     depth: 1
     version: master
-  when: fonts_ls_result.rc != 0
+  when: fish_fonts_ls_result.rc != 0
 
 - name: Powerline fontsをインストール
   ansible.builtin.command: /tmp/powerlinefonts/install.sh
-  when: fonts_ls_result.rc != 0
+  when: fish_fonts_ls_result.rc != 0
   changed_when: false
 
 - name: Powerline fontsをクリーン
