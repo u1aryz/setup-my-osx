@@ -23,7 +23,7 @@
 - name: caskパッケージをインストール
   community.general.homebrew_cask:
     name: "{{ item.name }}"
-    state: installed
+    state: latest
     install_options: "appdir=/Applications,no-quarantine"
   become: true
   failed_when: false
