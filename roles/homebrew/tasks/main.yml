@@ -20,26 +20,11 @@
     name: colima
     state: present
 
-- name: パスワードなしsudoを一時的に許可してcaskインストール
-  block:
-    - name: パスワードなしでsudoを許可
-      ansible.builtin.lineinfile:
-        path: /etc/sudoers
-        line: "{{ user }} ALL=(ALL) NOPASSWD: ALL"
-      become: true
-      changed_when: false
-    - name: caskパッケージをインストール
-      community.general.homebrew_cask:
-        name: "{{ item.name }}"
-        state: installed
-        install_options: "appdir=/Applications"
-      failed_when: false
-      with_items: "{{ homebrew_cask_packages }}"
-  always:
-    - name: パスワードなしでsudoを許可の設定を削除
-      ansible.builtin.lineinfile:
-        path: /etc/sudoers
-        line: "{{ user }} ALL=(ALL) NOPASSWD: ALL"
-        state: absent
-      become: true
-      changed_when: false
+- name: caskパッケージをインストール
+  community.general.homebrew_cask:
+    name: "{{ item.name }}"
+    state: installed
+    install_options: "appdir=/Applications,no-quarantine"
+  become: true
+  failed_when: false
+  with_items: "{{ homebrew_cask_packages }}"
