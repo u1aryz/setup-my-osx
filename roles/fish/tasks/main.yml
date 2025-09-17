@@ -57,30 +57,6 @@
     dest: ~/.config/fish/functions/fisher.fish
     mode: "0644"
 
-- name: Powerline fontsのインストールをチェック
-  ansible.builtin.shell: ls ~/Library/Fonts/*Powerline.ttf
-  register: fish_fonts_ls_result
-  failed_when: false
-  changed_when: false
-
-- name: Powerline fontsをclone
-  ansible.builtin.git:
-    repo: https://github.com/powerline/fonts.git
-    dest: /tmp/powerlinefonts
-    depth: 1
-    version: master
-  when: fish_fonts_ls_result.rc != 0
-
-- name: Powerline fontsをインストール
-  ansible.builtin.command: /tmp/powerlinefonts/install.sh
-  when: fish_fonts_ls_result.rc != 0
-  changed_when: false
-
-- name: Powerline fontsをクリーン
-  ansible.builtin.file:
-    path: /tmp/powerlinefonts
-    state: absent
-
 - name: fishのパッケージファイルを更新
   ansible.builtin.copy:
     dest: ~/.config/fish/fish_plugins

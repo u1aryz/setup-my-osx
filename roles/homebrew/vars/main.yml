@@ -83,3 +83,4 @@ homebrew_cask_packages:
   - { name: container }
   - { name: raspberry-pi-imager }
   - { name: azooKey }
+  - { name: font-meslo-lg-nerd-font }
