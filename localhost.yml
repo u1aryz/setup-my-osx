@@ -12,9 +12,9 @@
       delegate_to: localhost
 
   roles:
-    - fish
-    - vscode
-    - dotfiles
-    - osx_defaults
-    - homebrew
-    - mise
+    - { role: fish, tags: fish }
+    - { role: vscode, tags: vscode }
+    - { role: dotfiles, tags: dotfiles }
+    - { role: osx_defaults, tags: osx_defaults }
+    - { role: homebrew, tags: homebrew }
+    - { role: mise, tags: mise }
