@@ -35,6 +35,28 @@
     state: directory
     mode: "0755"
 
+- name: fishのconfファイルを配置するディレクトリを作成
+  ansible.builtin.file:
+    path: ~/.config/fish
+    state: directory
+    mode: "0755"
+
+- name: .fishディレクトリ内のファイル一覧を取得
+  ansible.builtin.find:
+    paths: ~/.config/dotfiles/.fish
+    file_type: file
+    recurse: true
+  register: dotfiles_fish_files
+
+- name: .fishディレクトリ内のファイルのシンボリックリンクを作成
+  ansible.builtin.file:
+    src: "{{ item.path }}"
+    dest: "~/.config/fish/{{ item.path | regex_replace('^.*/\\.fish/', '') }}"
+    state: link
+    force: true
+  loop: "{{ dotfiles_fish_files.files }}"
+  when: dotfiles_fish_files.files | length > 0
+
 - name: シンボリックリンクを作成
   ansible.builtin.file:
     src: "~/.config/dotfiles/{{ item.src }}"
