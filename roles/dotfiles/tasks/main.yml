@@ -10,6 +10,7 @@
     repo: git@github.com:u1aryz/dotfiles.git
     dest: ~/.config/dotfiles
     version: main
+    update: false
 
 - name: karabinerのconfファイルを配置するディレクトリを作成
   ansible.builtin.file:
