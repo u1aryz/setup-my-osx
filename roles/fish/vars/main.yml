@@ -1,7 +1,6 @@
 ---
 fish_packages: |
   oh-my-fish/theme-bobthefish
-  oh-my-fish/plugin-balias
   jethrokuan/fzf
   jethrokuan/z
   decors/fish-ghq
