@@ -53,6 +53,7 @@ homebrew_packages:
   - { name: graphviz }
   - { name: yt-dlp }
   - { name: gemini-cli }
+  - { name: codex }
 homebrew_cask_packages:
   - { name: raycast }
   - { name: google-chrome }
@@ -86,4 +87,3 @@ homebrew_cask_packages:
   - { name: azooKey }
   - { name: font-meslo-lg-nerd-font }
   - { name: claude-code }
-  - { name: codex }
