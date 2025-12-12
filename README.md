@@ -38,10 +38,10 @@
 make deploy
 
 # 特定のタグのみ実行
-make deploy TAGS=fish
+make deploy TAGS=dotfiles
 
 # 複数のタグを指定
-make deploy TAGS="fish,homebrew"
+make deploy TAGS="dotfiles,homebrew"
 ```
 
 このコマンドは`localhost.yml`プレイブックを実行します。管理者権限が必要なためパスワードの入力を求められます。
