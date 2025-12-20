@@ -54,6 +54,7 @@ homebrew_packages:
   - { name: yt-dlp }
   - { name: gemini-cli }
   - { name: codex }
+  - { name: terraform }
 homebrew_cask_packages:
   - { name: raycast }
   - { name: google-chrome }
