@@ -30,6 +30,12 @@
     key: largesize
     type: int
     value: 110
+- name: アプリの提案と最近使用したアプリをDockに表示しない
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: show-recents
+    type: bool
+    value: false
 - name: Dockを再起動
   ansible.builtin.command: killall Dock
   changed_when: false
