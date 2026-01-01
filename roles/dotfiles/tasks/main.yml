@@ -42,6 +42,12 @@
     state: directory
     mode: "0755"
 
+- name: miseのconfファイルを配置するディレクトリを作成
+  ansible.builtin.file:
+    path: ~/.config/mise
+    state: directory
+    mode: "0755"
+
 - name: .fishディレクトリ内のファイル一覧を取得
   ansible.builtin.find:
     paths: ~/.config/dotfiles/.fish
