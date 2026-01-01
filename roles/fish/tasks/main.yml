@@ -12,7 +12,7 @@
   become: true
 
 - name: 現在のデフォルトシェルを取得
-  ansible.builtin.command: dscl . -read /Users/{{ ansible_user_id }} UserShell
+  ansible.builtin.command: dscl . -read /Users/{{ ansible_facts["user_id"] }} UserShell
   register: fish_current_shell_raw
   become: true
   changed_when: false
@@ -22,7 +22,7 @@
     fish_current_shell: "{{ fish_current_shell_raw.stdout.split(' ')[-1] }}"
 
 - name: fishをデフォルトのシェルにする (macOS用)
-  ansible.builtin.command: dscl . -change /Users/{{ ansible_user_id }} UserShell {{ fish_current_shell }} /opt/homebrew/bin/fish
+  ansible.builtin.command: dscl . -change /Users/{{ ansible_facts["user_id"] }} UserShell {{ fish_current_shell }} /opt/homebrew/bin/fish
   become: true
   when: fish_current_shell != "/opt/homebrew/bin/fish"
   changed_when: false
