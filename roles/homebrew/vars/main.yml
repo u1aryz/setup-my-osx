@@ -88,3 +88,4 @@ homebrew_cask_packages:
   - { name: azooKey }
   - { name: font-meslo-lg-nerd-font }
   - { name: claude-code }
+  - { name: firefox }
