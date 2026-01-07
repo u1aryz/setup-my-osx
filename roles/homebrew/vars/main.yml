@@ -55,6 +55,7 @@ homebrew_packages:
   - { name: gemini-cli }
   - { name: codex }
   - { name: terraform }
+  - { name: gh }
 homebrew_cask_packages:
   - { name: raycast }
   - { name: google-chrome }
