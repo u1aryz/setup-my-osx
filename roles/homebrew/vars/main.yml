@@ -90,3 +90,4 @@ homebrew_cask_packages:
   - { name: font-meslo-lg-nerd-font }
   - { name: claude-code }
   - { name: firefox }
+  - { name: losslesscut }
