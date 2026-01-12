@@ -57,6 +57,7 @@ homebrew_packages:
   - { name: terraform }
   - { name: gh }
   - { name: opencode }
+  - { name: lazydocker }
 homebrew_cask_packages:
   - { name: raycast }
   - { name: google-chrome }
