@@ -4,6 +4,7 @@ homebrew_taps:
   - dart-lang/dart
   - jdx/tap
   - fastly/tap
+  - oven-sh/bun
 homebrew_packages:
   - { name: gcc }
   - { name: git }
@@ -58,6 +59,7 @@ homebrew_packages:
   - { name: gh }
   - { name: opencode }
   - { name: lazydocker }
+  - { name: bun }
 homebrew_cask_packages:
   - { name: raycast }
   - { name: google-chrome }
