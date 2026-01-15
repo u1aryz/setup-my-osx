@@ -1,4 +1,15 @@
 ---
+dotfiles_directories:
+  - ~/.config
+  - ~/.config/karabiner
+  - ~/.config/zellij
+  - ~/.config/ghostty
+  - ~/.docker
+  - ~/.config/fish
+  - ~/.config/mise
+  - ~/.claude
+  - ~/.config/ccstatusline
+
 dotfiles_files:
   - { src: .karabiner/karabiner.json, dest: ~/.config/karabiner/karabiner.json }
   - { src: .vscode/settings.json, dest: "~/Library/Application Support/Code/User/settings.json" }
@@ -9,3 +20,5 @@ dotfiles_files:
   - { src: .ghostty/config, dest: ~/.config/ghostty/config }
   - { src: .docker/config.json, dest: ~/.docker/config.json }
   - { src: .mise/config.toml, dest: ~/.config/mise/config.toml }
+  - { src: .claude/settings.json, dest: ~/.claude/settings.json }
+  - { src: .ccstatusline/settings.json, dest: ~/.config/ccstatusline/settings.json }

@@ -1,9 +1,10 @@
 ---
-- name: confファイルを配置するrootディレクトリを作成
+- name: confファイルを配置するディレクトリを作成
   ansible.builtin.file:
-    path: ~/.config
+    path: "{{ item }}"
     state: directory
     mode: "0755"
+  loop: "{{ dotfiles_directories }}"
 
 - name: dotfilesをclone
   ansible.builtin.git:
@@ -11,42 +12,6 @@
     dest: ~/.config/dotfiles
     version: main
     update: false
-
-- name: karabinerのconfファイルを配置するディレクトリを作成
-  ansible.builtin.file:
-    path: ~/.config/karabiner
-    state: directory
-    mode: "0755"
-
-- name: zellijのconfファイルを配置するディレクトリを作成
-  ansible.builtin.file:
-    path: ~/.config/zellij
-    state: directory
-    mode: "0755"
-
-- name: ghosttyのconfファイルを配置するディレクトリを作成
-  ansible.builtin.file:
-    path: ~/.config/ghostty
-    state: directory
-    mode: "0755"
-
-- name: dockerのconfファイルを配置するディレクトリを作成
-  ansible.builtin.file:
-    path: ~/.docker
-    state: directory
-    mode: "0755"
-
-- name: fishのconfファイルを配置するディレクトリを作成
-  ansible.builtin.file:
-    path: ~/.config/fish
-    state: directory
-    mode: "0755"
-
-- name: miseのconfファイルを配置するディレクトリを作成
-  ansible.builtin.file:
-    path: ~/.config/mise
-    state: directory
-    mode: "0755"
 
 - name: .fishディレクトリ内のファイル一覧を取得
   ansible.builtin.find:
