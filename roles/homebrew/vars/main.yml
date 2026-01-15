@@ -1,10 +1,4 @@
 ---
-homebrew_taps:
-  - leoafarias/fvm
-  - dart-lang/dart
-  - jdx/tap
-  - fastly/tap
-  - oven-sh/bun
 homebrew_packages:
   - { name: gcc }
   - { name: git }
@@ -23,8 +17,8 @@ homebrew_packages:
   - { name: kubectl }
   - { name: minikube }
   - { name: helm }
-  - { name: dart }
-  - { name: fvm }
+  - { name: dart-lang/dart/dart }
+  - { name: leoafarias/fvm/fvm }
   - { name: lolcat }
   - { name: cloudflared }
   - { name: eza }
@@ -35,8 +29,8 @@ homebrew_packages:
   - { name: mise }
   - { name: coreutils }
   - { name: zellij }
-  - { name: usage }
-  - { name: fastly }
+  - { name: jdx/tap/usage }
+  - { name: fastly/tap/fastly }
   - { name: websocat }
   - { name: noti }
   - { name: ghostty }
@@ -59,7 +53,7 @@ homebrew_packages:
   - { name: gh }
   - { name: opencode }
   - { name: lazydocker }
-  - { name: bun }
+  - { name: oven-sh/bun/bun }
 homebrew_cask_packages:
   - { name: raycast }
   - { name: google-chrome }
