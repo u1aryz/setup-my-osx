@@ -58,7 +58,6 @@ homebrew_cask_packages:
   - { name: raycast }
   - { name: google-chrome }
   - { name: google-cloud-sdk }
-  - { name: android-studio }
   - { name: webstorm }
   - { name: keyboardcleantool }
   - { name: gimp }
@@ -74,10 +73,8 @@ homebrew_cask_packages:
   - { name: qfinder-pro }
   - { name: aerial }
   - { name: bitwarden }
-  - { name: lens }
   - { name: flutter }
   - { name: tableplus }
-  - { name: rustrover }
   - { name: tailscale }
   - { name: neohtop }
   - { name: firefox@nightly }
