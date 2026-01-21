@@ -54,6 +54,7 @@ homebrew_packages:
   - { name: opencode }
   - { name: lazydocker }
   - { name: oven-sh/bun/bun }
+  - { name: mactop }
 homebrew_cask_packages:
   - { name: raycast }
   - { name: google-chrome }
