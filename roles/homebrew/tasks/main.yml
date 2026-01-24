@@ -9,11 +9,6 @@
     state: latest
   with_items: "{{ homebrew_packages }}"
 
-- name: ログイン時にColimaを自動起動する
-  community.general.homebrew_services:
-    name: colima
-    state: present
-
 - name: パスワードなしsudoを一時的に許可してcaskインストール
   block:
     - name: パスワードなしでsudoを許可

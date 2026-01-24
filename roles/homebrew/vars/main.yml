@@ -36,7 +36,6 @@ homebrew_packages:
   - { name: ghostty }
   - { name: prettier }
   - { name: yamlfmt }
-  - { name: colima }
   - { name: docker }
   - { name: docker-compose }
   - { name: docker-buildx }
@@ -55,6 +54,7 @@ homebrew_packages:
   - { name: lazydocker }
   - { name: oven-sh/bun/bun }
   - { name: mactop }
+  - { name: orbstack }
 homebrew_cask_packages:
   - { name: raycast }
   - { name: google-chrome }
