@@ -55,6 +55,7 @@ homebrew_packages:
   - { name: oven-sh/bun/bun }
   - { name: mactop }
   - { name: orbstack }
+  - { name: cloc }
 homebrew_cask_packages:
   - { name: raycast }
   - { name: google-chrome }
