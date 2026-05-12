@@ -88,3 +88,5 @@ homebrew_cask_packages:
   - { name: claude-code }
   - { name: firefox }
   - { name: losslesscut }
+  - { name: opencode-desktop }
+  - { name: codex-app }
