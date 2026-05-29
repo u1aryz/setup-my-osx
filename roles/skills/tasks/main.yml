@@ -1,0 +1,28 @@
+---
+- name: nodeをインストール
+  community.general.homebrew:
+    name: node
+    state: present
+
+- name: インストール済みskillsを取得
+  ansible.builtin.command:
+    cmd: npx --yes skills list -g --json
+  register: skills_list_result
+  changed_when: false
+
+- name: インストール済みskills名を設定
+  ansible.builtin.set_fact:
+    skills_installed_names: "{{ (skills_list_result.stdout | from_json) | map(attribute='name') | list }}"
+  changed_when: false
+
+- name: skillsをインストール
+  ansible.builtin.command:
+    cmd: npx --yes skills add {{ item.repo }} --skill {{ item.skill }} -y -g
+  loop: "{{ skills_packages }}"
+  when: item.skill not in skills_installed_names
+  changed_when: true
+
+- name: skillsを更新
+  ansible.builtin.command:
+    cmd: npx --yes skills update {{ skills_packages | map(attribute='skill') | join(' ') }} -g -y
+  changed_when: true

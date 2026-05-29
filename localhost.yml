@@ -18,3 +18,4 @@
     - { role: osx_defaults, tags: osx_defaults }
     - { role: homebrew, tags: homebrew }
     - { role: mise, tags: mise }
+    - { role: skills, tags: skills }

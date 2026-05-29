@@ -1,0 +1,14 @@
+---
+skills_packages:
+  - repo: https://github.com/upstash/context7
+    skill: context7-mcp
+  - repo: https://github.com/microsoft/playwright-cli
+    skill: playwright-cli
+  - repo: https://github.com/saadeghi/daisyui
+    skill: daisyui
+  - repo: https://github.com/anthropics/skills
+    skill: frontend-design
+  - repo: https://github.com/cloudflare/skills
+    skill: cloudflare
+  - repo: https://github.com/cloudflare/skills
+    skill: workers-best-practices
