@@ -12,3 +12,5 @@ skills_packages:
     skill: cloudflare
   - repo: https://github.com/cloudflare/skills
     skill: workers-best-practices
+  - repo: https://github.com/brianlovin/claude-config
+    skill: simplify
