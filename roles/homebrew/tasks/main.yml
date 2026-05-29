@@ -12,9 +12,13 @@
 - name: パスワードなしsudoを一時的に許可してcaskインストール
   block:
     - name: パスワードなしでsudoを許可
-      ansible.builtin.lineinfile:
-        path: /etc/sudoers
-        line: "{{ user }} ALL=(ALL) NOPASSWD: ALL"
+      ansible.builtin.copy:
+        dest: "/etc/sudoers.d/{{ user }}-homebrew-nopasswd"
+        content: "{{ user }} ALL=(ALL) NOPASSWD: ALL\n"
+        owner: root
+        group: wheel
+        mode: "0440"
+        validate: /usr/sbin/visudo -cf %s
       become: true
       changed_when: false
     - name: caskパッケージをインストール
@@ -26,9 +30,8 @@
       with_items: "{{ homebrew_cask_packages }}"
   always:
     - name: パスワードなしでsudoを許可の設定を削除
-      ansible.builtin.lineinfile:
-        path: /etc/sudoers
-        line: "{{ user }} ALL=(ALL) NOPASSWD: ALL"
+      ansible.builtin.file:
+        path: "/etc/sudoers.d/{{ user }}-homebrew-nopasswd"
         state: absent
       become: true
       changed_when: false
