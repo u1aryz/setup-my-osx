@@ -12,6 +12,7 @@
 - macOSシステム設定
 - Homebrew
 - mise
+- skills
 
 ## 必要条件
 
