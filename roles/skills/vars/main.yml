@@ -14,3 +14,5 @@ skills_packages:
     skill: workers-best-practices
   - repo: https://github.com/brianlovin/claude-config
     skill: simplify
+  - repo: https://github.com/pproenca/dot-skills
+    skill: wxt-browser-extensions
