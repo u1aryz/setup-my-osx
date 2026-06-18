@@ -16,3 +16,5 @@ skills_packages:
     skill: simplify
   - repo: https://github.com/pproenca/dot-skills
     skill: wxt-browser-extensions
+  - repo: https://github.com/tanstack-skills/tanstack-skills
+    skill: tanstack-start
