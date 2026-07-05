@@ -29,7 +29,7 @@ homebrew_packages:
   - { name: mise }
   - { name: coreutils }
   - { name: zellij }
-  - { name: jdx/tap/usage }
+  - { name: usage }
   - { name: fastly/tap/fastly }
   - { name: websocat }
   - { name: noti }
@@ -54,6 +54,7 @@ homebrew_packages:
   - { name: mactop }
   - { name: orbstack }
   - { name: cloc }
+  - { name: openjdk }
 homebrew_cask_packages:
   - { name: raycast }
   - { name: google-chrome }
@@ -88,3 +89,4 @@ homebrew_cask_packages:
   - { name: losslesscut }
   - { name: opencode-desktop }
   - { name: codex-app }
+  - { name: android-commandlinetools }
