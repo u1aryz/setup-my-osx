@@ -55,6 +55,7 @@ homebrew_packages:
   - { name: orbstack }
   - { name: cloc }
   - { name: openjdk }
+  - { name: container }
 homebrew_cask_packages:
   - { name: raycast }
   - { name: google-chrome }
@@ -80,7 +81,6 @@ homebrew_cask_packages:
   - { name: neohtop }
   - { name: firefox@nightly }
   - { name: jiggler }
-  - { name: container }
   - { name: raspberry-pi-imager }
   - { name: azooKey }
   - { name: font-meslo-lg-nerd-font }
