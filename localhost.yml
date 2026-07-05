@@ -4,6 +4,11 @@
   connection: local
   gather_facts: true
 
+  vars_prompt:
+    - name: ansible_become_pass
+      prompt: BECOME password
+      private: true
+
   pre_tasks:
     - name: community.generalをインストール
       ansible.builtin.command:

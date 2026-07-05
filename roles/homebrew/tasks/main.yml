@@ -9,29 +9,31 @@
     state: latest
   with_items: "{{ homebrew_packages }}"
 
-- name: パスワードなしsudoを一時的に許可してcaskインストール
-  block:
-    - name: パスワードなしでsudoを許可
-      ansible.builtin.copy:
-        dest: "/etc/sudoers.d/{{ user }}-homebrew-nopasswd"
-        content: "{{ user }} ALL=(ALL) NOPASSWD: ALL\n"
-        owner: root
-        group: wheel
-        mode: "0440"
-        validate: /usr/sbin/visudo -cf %s
-      become: true
-      changed_when: false
-    - name: caskパッケージをインストール
-      community.general.homebrew_cask:
-        name: "{{ item.name }}"
-        state: installed
-        install_options: "appdir=/Applications"
-      failed_when: false
-      with_items: "{{ homebrew_cask_packages }}"
-  always:
-    - name: パスワードなしでsudoを許可の設定を削除
-      ansible.builtin.file:
-        path: "/etc/sudoers.d/{{ user }}-homebrew-nopasswd"
-        state: absent
-      become: true
-      changed_when: false
+- name: becomeパスワードが定義されていることを確認
+  ansible.builtin.assert:
+    that: ansible_become_pass is defined
+    fail_msg: ansible_become_passが未定義です。非対話実行の場合は -e ansible_become_pass=... を指定してください
+
+- name: caskパッケージをインストール
+  community.general.homebrew_cask:
+    name: "{{ item.name }}"
+    state: installed
+    install_options: "appdir=/Applications"
+    sudo_password: "{{ ansible_become_pass }}"
+  ignore_errors: true
+  register: homebrew_cask_results
+  with_items: "{{ homebrew_cask_packages }}"
+
+- name: 失敗したcaskの一覧を集計
+  ansible.builtin.set_fact:
+    homebrew_cask_failed: "{{ homebrew_cask_results.results | selectattr('failed') | map(attribute='item.name') | list }}"
+
+- name: インストールに失敗したcaskを警告表示
+  ansible.builtin.debug:
+    msg: "警告: 以下のcaskのインストールに失敗しました: {{ homebrew_cask_failed | join(', ') }}"
+  when: homebrew_cask_failed | length > 0
+
+- name: すべてのcaskが失敗した場合は中断
+  ansible.builtin.fail:
+    msg: すべてのcaskのインストールに失敗しました。becomeパスワードが正しいか確認してください
+  when: homebrew_cask_failed | length == homebrew_cask_packages | length
