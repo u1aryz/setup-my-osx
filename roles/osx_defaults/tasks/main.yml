@@ -1,79 +1,77 @@
 ---
-# Dock関連
-- name: Dockを自動的に隠す
-  community.general.osx_defaults:
-    domain: com.apple.dock
-    key: autohide
-    type: bool
-    value: true
-- name: Dockをdelayなしで表示・非表示させる
-  community.general.osx_defaults:
-    domain: com.apple.dock
-    key: autohide-delay
-    type: float
-    value: 0
-- name: Dockの表示アニメーションを0.7にする
-  community.general.osx_defaults:
-    domain: com.apple.dock
-    key: autohide-time-modifier
-    type: float
-    value: 0.7
-- name: Dockをオンマウスでアイコンサイズをズームにする
-  community.general.osx_defaults:
-    domain: com.apple.dock
-    key: magnification
-    type: bool
-    value: true
-- name: Dockのアイコン拡大サイズを110にする
-  community.general.osx_defaults:
-    domain: com.apple.dock
-    key: largesize
-    type: int
-    value: 110
-- name: アプリの提案と最近使用したアプリをDockに表示しない
-  community.general.osx_defaults:
-    domain: com.apple.dock
-    key: show-recents
-    type: bool
-    value: false
-- name: Dockを再起動
-  ansible.builtin.command: killall Dock
-  changed_when: false
+- name: Dock関連
+  notify: Dockを再起動
+  block:
+    - name: Dockを自動的に隠す
+      community.general.osx_defaults:
+        domain: com.apple.dock
+        key: autohide
+        type: bool
+        value: true
+    - name: Dockをdelayなしで表示・非表示させる
+      community.general.osx_defaults:
+        domain: com.apple.dock
+        key: autohide-delay
+        type: float
+        value: 0
+    - name: Dockの表示アニメーションを0.7にする
+      community.general.osx_defaults:
+        domain: com.apple.dock
+        key: autohide-time-modifier
+        type: float
+        value: 0.7
+    - name: Dockをオンマウスでアイコンサイズをズームにする
+      community.general.osx_defaults:
+        domain: com.apple.dock
+        key: magnification
+        type: bool
+        value: true
+    - name: Dockのアイコン拡大サイズを110にする
+      community.general.osx_defaults:
+        domain: com.apple.dock
+        key: largesize
+        type: int
+        value: 110
+    - name: アプリの提案と最近使用したアプリをDockに表示しない
+      community.general.osx_defaults:
+        domain: com.apple.dock
+        key: show-recents
+        type: bool
+        value: false
 
-# Finder関連
-- name: Finderですべての拡張子を表示する
-  community.general.osx_defaults:
-    domain: NSGlobalDomain
-    key: AppleShowAllExtensions
-    type: bool
-    value: true
-- name: Finderで拡張子の変更を警告しない
-  community.general.osx_defaults:
-    domain: com.apple.finder
-    key: FXEnableExtensionChangeWarning
-    type: bool
-    value: false
-- name: Finderで検索対象のデフォルトをカレントディレクトリにする
-  community.general.osx_defaults:
-    domain: com.apple.finder
-    key: FXDefaultSearchScope
-    type: string
-    value: SCcf
-- name: Finderでステータスバーを表示する
-  community.general.osx_defaults:
-    domain: com.apple.finder
-    key: ShowStatusBar
-    type: bool
-    value: true
-- name: Finderでタイトルをフルパス表示にする
-  community.general.osx_defaults:
-    domain: com.apple.finder
-    key: _FXShowPosixPathInTitle
-    type: bool
-    value: true
-- name: Finderを再起動
-  ansible.builtin.command: killall Finder
-  changed_when: false
+- name: Finder関連
+  notify: Finderを再起動
+  block:
+    - name: Finderですべての拡張子を表示する
+      community.general.osx_defaults:
+        domain: NSGlobalDomain
+        key: AppleShowAllExtensions
+        type: bool
+        value: true
+    - name: Finderで拡張子の変更を警告しない
+      community.general.osx_defaults:
+        domain: com.apple.finder
+        key: FXEnableExtensionChangeWarning
+        type: bool
+        value: false
+    - name: Finderで検索対象のデフォルトをカレントディレクトリにする
+      community.general.osx_defaults:
+        domain: com.apple.finder
+        key: FXDefaultSearchScope
+        type: string
+        value: SCcf
+    - name: Finderでステータスバーを表示する
+      community.general.osx_defaults:
+        domain: com.apple.finder
+        key: ShowStatusBar
+        type: bool
+        value: true
+    - name: Finderでタイトルをフルパス表示にする
+      community.general.osx_defaults:
+        domain: com.apple.finder
+        key: _FXShowPosixPathInTitle
+        type: bool
+        value: true
 
 # トラックパッド関連(チェックボックスは反映されるが動作しない...)
 - name: トラックパッドのタップでクリックを有効にする(その1)
@@ -130,3 +128,7 @@
     key: disable-shadow
     type: bool
     value: true
+
+# 後続ロールの失敗で再起動が失われないよう、このロール内でhandlerを実行する
+- name: 通知済みのhandlerを即時実行
+  ansible.builtin.meta: flush_handlers
