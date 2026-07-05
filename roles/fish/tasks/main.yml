@@ -25,7 +25,7 @@
   ansible.builtin.command: dscl . -change /Users/{{ ansible_facts["user_id"] }} UserShell {{ fish_current_shell }} /opt/homebrew/bin/fish
   become: true
   when: fish_current_shell != "/opt/homebrew/bin/fish"
-  changed_when: false
+  changed_when: true
 
 - name: fish completionsのインストール先を作成
   ansible.builtin.file:
@@ -53,7 +53,7 @@
 
 - name: fisherをインストール
   ansible.builtin.get_url:
-    url: https://git.io/fisher
+    url: https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish
     dest: ~/.config/fish/functions/fisher.fish
     mode: "0644"
 
