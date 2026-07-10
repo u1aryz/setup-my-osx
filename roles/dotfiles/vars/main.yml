@@ -9,6 +9,7 @@ dotfiles_directories:
   - ~/.config/mise
   - ~/.claude
   - ~/.config/ccstatusline
+  - ~/.config/herdr
 
 dotfiles_files:
   - { src: .karabiner/karabiner.json, dest: ~/.config/karabiner/karabiner.json }
@@ -22,3 +23,4 @@ dotfiles_files:
   - { src: .mise/config.toml, dest: ~/.config/mise/config.toml }
   - { src: .claude/settings.json, dest: ~/.claude/settings.json }
   - { src: .ccstatusline/settings.json, dest: ~/.config/ccstatusline/settings.json }
+  - { src: .herdr/config.toml, dest: ~/.config/herdr/config.toml }
