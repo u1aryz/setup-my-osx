@@ -18,3 +18,5 @@ skills_packages:
     skill: wxt-browser-extensions
   - repo: https://github.com/tanstack-skills/tanstack-skills
     skill: tanstack-start
+  - repo: https://github.com/ogulcancelik/herdr
+    skill: herdr
