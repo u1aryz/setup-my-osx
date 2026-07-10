@@ -56,6 +56,7 @@ homebrew_packages:
   - { name: cloc }
   - { name: openjdk }
   - { name: container }
+  - { name: herdr }
 homebrew_cask_packages:
   - { name: raycast }
   - { name: google-chrome }
