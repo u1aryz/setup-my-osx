@@ -20,3 +20,5 @@ skills_packages:
     skill: tanstack-start
   - repo: https://github.com/ogulcancelik/herdr
     skill: herdr
+  - repo: https://github.com/modem-dev/hunk
+    skill: hunk-review
