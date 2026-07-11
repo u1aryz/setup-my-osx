@@ -8,12 +8,6 @@
     name: "{{ item }}"
   with_items: "{{ homebrew_taps }}"
 
-- name: サードパーティtapを信頼
-  ansible.builtin.command: brew trust --tap {{ item }}
-  register: homebrew_trust_results
-  changed_when: "'Already trusted' not in homebrew_trust_results.stdout"
-  with_items: "{{ homebrew_taps }}"
-
 - name: brewパッケージをインストール
   community.general.homebrew:
     name: "{{ item.name }}"
