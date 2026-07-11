@@ -64,6 +64,7 @@ homebrew_packages:
   - { name: container }
   - { name: herdr }
   - { name: hunk }
+  - { name: go }
 homebrew_cask_packages:
   - { name: raycast }
   - { name: google-chrome }
