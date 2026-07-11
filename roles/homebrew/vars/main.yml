@@ -71,7 +71,6 @@ homebrew_cask_packages:
   - { name: slack }
   - { name: visual-studio-code }
   - { name: vlc }
-  - { name: insomnia }
   - { name: charles }
   - { name: qfinder-pro }
   - { name: aerial }
