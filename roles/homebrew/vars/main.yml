@@ -1,4 +1,10 @@
 ---
+homebrew_trusted_taps:
+  - dart-lang/dart
+  - leoafarias/fvm
+  - fastly/tap
+  - oven-sh/bun
+  - hashicorp/tap
 homebrew_packages:
   - { name: gcc }
   - { name: git }
@@ -47,7 +53,7 @@ homebrew_packages:
   - { name: graphviz }
   - { name: yt-dlp }
   - { name: codex }
-  - { name: terraform }
+  - { name: hashicorp/tap/terraform }
   - { name: gh }
   - { name: lazydocker }
   - { name: oven-sh/bun/bun }
