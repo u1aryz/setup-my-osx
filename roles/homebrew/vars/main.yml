@@ -1,5 +1,5 @@
 ---
-homebrew_trusted_taps:
+homebrew_taps:
   - dart-lang/dart
   - leoafarias/fvm
   - fastly/tap
