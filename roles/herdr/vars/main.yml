@@ -1,0 +1,3 @@
+---
+herdr_plugins:
+  - { repo: smarzban/herdr-file-viewer, plugin_id: herdr-file-viewer }

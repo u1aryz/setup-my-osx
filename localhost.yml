@@ -23,4 +23,5 @@
     - { role: osx_defaults, tags: osx_defaults }
     - { role: homebrew, tags: homebrew }
     - { role: mise, tags: mise }
+    - { role: herdr, tags: herdr }
     - { role: skills, tags: skills }

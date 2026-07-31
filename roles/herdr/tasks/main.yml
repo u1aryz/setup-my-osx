@@ -1,0 +1,23 @@
+---
+- name: herdrをインストール
+  community.general.homebrew:
+    name: herdr
+    state: present
+
+# サーバー未起動でもローカルの状態から一覧を返す(フレッシュマシンでも動作する)
+- name: インストール済みプラグインを取得
+  ansible.builtin.command:
+    cmd: herdr plugin list --json
+  register: herdr_plugin_list_result
+  changed_when: false
+
+- name: インストール済みプラグインIDを設定
+  ansible.builtin.set_fact:
+    herdr_installed_plugin_ids: "{{ (herdr_plugin_list_result.stdout | from_json).result.plugins | map(attribute='plugin_id') | list }}"
+
+- name: プラグインをインストール
+  ansible.builtin.command:
+    cmd: herdr plugin install {{ item.repo }} --yes
+  loop: "{{ herdr_plugins }}"
+  when: item.plugin_id not in herdr_installed_plugin_ids
+  changed_when: true

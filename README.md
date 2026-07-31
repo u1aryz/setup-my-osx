@@ -12,6 +12,7 @@
 - macOSシステム設定
 - Homebrew
 - mise
+- herdr(本体とプラグイン)
 - skills
 
 ## 必要条件
