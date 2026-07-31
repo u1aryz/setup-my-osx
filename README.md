@@ -44,7 +44,12 @@ make deploy TAGS=dotfiles
 
 # 複数のタグを指定
 make deploy TAGS="dotfiles,homebrew"
+
+# fzfでタグを対話的に選択して実行
+make deploy-select
 ```
+
+`make deploy-select`は`fzf`でロールのタグを選択してデプロイします。`Space`で選択、`Ctrl-A`で全選択/全解除、`Enter`で実行します。何も選択せずに`Esc`でキャンセルできます。実行には`fzf`がインストールされている必要があります。
 
 このコマンドは`localhost.yml`プレイブックを実行します。管理者権限が必要なためパスワードの入力を求められます。
 
