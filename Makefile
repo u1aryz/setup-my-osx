@@ -1,7 +1,12 @@
 .PHONY: deploy deploy-select format
 
+# becomeパスワードが必要なrole。これらを含まないTAGS指定時はプロンプトをスキップする
+BECOME_TAGS := fish homebrew
+comma := ,
+NEEDS_BECOME = $(if $(TAGS),$(filter $(BECOME_TAGS),$(subst $(comma), ,$(TAGS))),all)
+
 deploy:
-	ansible-playbook localhost.yml $(if $(TAGS),--tags $(TAGS))
+	ansible-playbook localhost.yml $(if $(TAGS),--tags $(TAGS)) $(if $(NEEDS_BECOME),,-e ansible_become_pass=)
 
 deploy-select:
 	@tags=$$(grep -oE 'tags: [a-z_]+' localhost.yml | cut -d' ' -f2 | \
