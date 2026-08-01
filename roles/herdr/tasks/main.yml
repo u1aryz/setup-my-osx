@@ -4,10 +4,13 @@
     name: herdr
     state: present
 
-# サーバー未起動でもローカルの状態から一覧を返す(フレッシュマシンでも動作する)
+# 未使用ソケットを指定してサーバーを経由せずローカルの状態から一覧を返す
+# (フレッシュマシンでも、旧バージョンのサーバー稼働中でも動作する)
 - name: インストール済みプラグインを取得
   ansible.builtin.command:
     cmd: herdr plugin list --json
+  environment:
+    HERDR_SOCKET_PATH: "{{ herdr_offline_socket_path }}"
   register: herdr_plugin_list_result
   changed_when: false
 
@@ -18,6 +21,8 @@
 - name: プラグインをインストール
   ansible.builtin.command:
     cmd: herdr plugin install {{ item.repo }} --yes
+  environment:
+    HERDR_SOCKET_PATH: "{{ herdr_offline_socket_path }}"
   loop: "{{ herdr_plugins }}"
   when: item.plugin_id not in herdr_installed_plugin_ids
   changed_when: true

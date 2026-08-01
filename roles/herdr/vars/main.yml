@@ -1,3 +1,7 @@
 ---
+# 稼働中サーバーとのプロトコル不一致を避けるため、未使用のソケットパスを指定して
+# CLIを常にサーバー未接続(ローカル状態のみ)で動作させる
+herdr_offline_socket_path: /tmp/herdr-ansible-offline.sock
+
 herdr_plugins:
   - { repo: smarzban/herdr-file-viewer, plugin_id: herdr-file-viewer }
