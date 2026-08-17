@@ -26,3 +26,13 @@
   loop: "{{ herdr_plugins }}"
   when: item.plugin_id not in herdr_installed_plugin_ids
   changed_when: true
+
+- name: エージェント連携をインストール
+  ansible.builtin.command:
+    argv:
+      - herdr
+      - integration
+      - install
+      - "{{ item }}"
+  loop: "{{ herdr_integrations }}"
+  changed_when: true

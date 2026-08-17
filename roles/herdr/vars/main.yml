@@ -5,3 +5,6 @@ herdr_offline_socket_path: /tmp/herdr-ansible-offline.sock
 
 herdr_plugins:
   - { repo: smarzban/herdr-file-viewer, plugin_id: herdr-file-viewer }
+
+herdr_integrations:
+  - pi
