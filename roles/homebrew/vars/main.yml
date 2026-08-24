@@ -63,6 +63,7 @@ homebrew_packages:
   - { name: hunk }
   - { name: go }
 homebrew_cask_packages:
+  - { name: 1password }
   - { name: raycast }
   - { name: google-chrome }
   - { name: google-cloud-sdk }
