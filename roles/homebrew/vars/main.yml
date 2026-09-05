@@ -93,3 +93,4 @@ homebrew_cask_packages:
   - { name: opencode-desktop }
   - { name: codex-app }
   - { name: android-commandlinetools }
+  - { name: android-platform-tools }
