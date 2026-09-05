@@ -1,6 +1,5 @@
 ---
 homebrew_taps:
-  - dart-lang/dart
   - leoafarias/fvm
   - fastly/tap
   - oven-sh/bun
@@ -21,7 +20,6 @@ homebrew_packages:
   - { name: kubectl }
   - { name: minikube }
   - { name: helm }
-  - { name: dart-lang/dart/dart }
   - { name: leoafarias/fvm/fvm }
   - { name: lolcat }
   - { name: cloudflared }
