@@ -17,3 +17,9 @@
     creates: "{{ mise_completion_file }}"
   register: mise_completion_result
   changed_when: mise_completion_result.rc == 0
+
+- name: mise管理ツールを更新
+  ansible.builtin.command:
+    cmd: mise up
+  register: mise_up_result
+  changed_when: mise_up_result.stdout | length > 0
