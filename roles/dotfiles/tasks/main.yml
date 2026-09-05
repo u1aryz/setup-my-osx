@@ -1,7 +1,7 @@
 ---
 - name: dotfilesをclone
   ansible.builtin.git:
-    repo: git@github.com:u1aryz/dotfiles.git
+    repo: https://github.com/u1aryz/dotfiles.git
     dest: ~/.config/dotfiles
     version: main
     update: false
