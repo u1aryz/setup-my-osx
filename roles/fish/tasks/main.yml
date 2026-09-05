@@ -65,4 +65,11 @@
 
 - name: fishのパッケージを更新
   ansible.builtin.command: fish -c "fisher update"
-  changed_when: false
+  register: fish_fisher_update_result
+  changed_when: >-
+    'Installing ' in fish_fisher_update_result.stdout or
+    'Updating ' in fish_fisher_update_result.stdout or
+    'Removing ' in fish_fisher_update_result.stdout
+  failed_when: >-
+    fish_fisher_update_result.rc != 0 or
+    'fisher:' in fish_fisher_update_result.stderr
