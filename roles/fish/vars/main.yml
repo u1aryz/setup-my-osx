@@ -5,5 +5,4 @@ fish_packages: |
   jethrokuan/z
   decors/fish-ghq
   u1aryz/fish-copypath
-  laughedelic/fish_logo
   evanlucas/fish-kubectl-completions
