@@ -60,6 +60,8 @@ homebrew_packages:
   - { name: herdr }
   - { name: hunk }
   - { name: go }
+  - { name: glow }
+  - { name: git-delta }
 homebrew_cask_packages:
   - { name: 1password }
   - { name: raycast }
