@@ -44,6 +44,7 @@ homebrew_packages:
   - { name: ansible-lint }
   - { name: ffmpeg }
   - { name: taplo }
+  - { name: tombi }
   - { name: awscli }
   - { name: graphviz }
   - { name: yt-dlp }
