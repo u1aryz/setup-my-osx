@@ -22,3 +22,5 @@ skills_packages:
     skill: herdr
   - repo: https://github.com/modem-dev/hunk
     skill: hunk-review
+  - repo: https://github.com/k-dense-ai/scientific-agent-skills
+    skill: pi-agent
