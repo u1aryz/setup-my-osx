@@ -12,6 +12,8 @@ skills_packages:
     skill: cloudflare
   - repo: https://github.com/cloudflare/skills
     skill: workers-best-practices
+  - repo: https://github.com/cloudflare/security-audit-skill
+    skill: security-audit
   - repo: https://github.com/brianlovin/claude-config
     skill: simplify
   - repo: https://github.com/pproenca/dot-skills
