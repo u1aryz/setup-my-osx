@@ -63,6 +63,7 @@ homebrew_packages:
   - { name: go }
   - { name: glow }
   - { name: git-delta }
+  - { name: act }
 homebrew_cask_packages:
   - { name: 1password }
   - { name: raycast }
