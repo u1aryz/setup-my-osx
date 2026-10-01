@@ -30,3 +30,7 @@ skills_packages:
     skill: pi-agent
   - repo: https://github.com/mattpocock/skills
     skill: grill-with-docs
+  - repo: https://github.com/mattpocock/skills
+    skill: domain-modeling
+  - repo: https://github.com/mattpocock/skills
+    skill: grilling
