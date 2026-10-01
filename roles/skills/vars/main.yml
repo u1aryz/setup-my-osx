@@ -28,3 +28,5 @@ skills_packages:
     skill: hunk-review
   - repo: https://github.com/k-dense-ai/scientific-agent-skills
     skill: pi-agent
+  - repo: https://github.com/mattpocock/skills
+    skill: grill-with-docs
