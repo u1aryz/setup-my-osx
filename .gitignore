@@ -1,2 +1,5 @@
 # Mac meta file
 .DS_Store
+
+# Ansible cache
+.ansible/
