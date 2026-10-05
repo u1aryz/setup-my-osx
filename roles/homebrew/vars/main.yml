@@ -4,6 +4,7 @@ homebrew_taps:
   - fastly/tap
   - oven-sh/bun
   - hashicorp/tap
+  - penso/tap
 homebrew_packages:
   - { name: gcc }
   - { name: git }
@@ -59,6 +60,7 @@ homebrew_packages:
   - { name: openjdk }
   - { name: container }
   - { name: herdr }
+  - { name: penso/tap/herdr-gpui }
   - { name: hunk }
   - { name: go }
   - { name: glow }
