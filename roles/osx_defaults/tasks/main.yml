@@ -42,6 +42,12 @@
 - name: Finder関連
   notify: Finderを再起動
   block:
+    - name: 新規Finderウィンドウでホームフォルダを開く
+      community.general.osx_defaults:
+        domain: com.apple.finder
+        key: NewWindowTarget
+        type: string
+        value: PfHm
     - name: Finderですべての拡張子を表示する
       community.general.osx_defaults:
         domain: NSGlobalDomain
