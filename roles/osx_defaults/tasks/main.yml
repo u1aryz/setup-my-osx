@@ -89,21 +89,36 @@
     value: true
   notify: Control Centerを再起動
 
-# トラックパッド関連(チェックボックスは反映されるが動作しない...)
-- name: トラックパッドのタップでクリックを有効にする(その1)
+# トラックパッド関連
+- name: Bluetoothトラックパッドのタップでクリックを有効にする
   community.general.osx_defaults:
     domain: com.apple.driver.AppleBluetoothMultitouch.trackpad
     key: Clicking
     type: int
     value: 1
 
-- name: トラックパッドのタップでクリックを有効にする(その2)
+- name: 内蔵トラックパッドのタップでクリックを有効にする
+  community.general.osx_defaults:
+    domain: com.apple.AppleMultitouchTrackpad
+    key: Clicking
+    type: int
+    value: 1
+
+- name: ホストごとのタップでクリックを有効にする
   community.general.osx_defaults:
     host: currentHost
     domain: NSGlobalDomain
     key: com.apple.mouse.tapBehavior
     type: int
     value: 1
+
+# 保存値が既に一致していても、ログイン中のセッションへ再適用する
+- name: トラックパッド設定を現在のセッションに反映する
+  ansible.builtin.command:
+    argv:
+      - /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings
+      - -u
+  changed_when: true
 
 # キーボード関連
 - name: フルキーボードアクセスを有効にする
