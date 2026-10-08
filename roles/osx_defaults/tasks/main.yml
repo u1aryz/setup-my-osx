@@ -73,6 +73,16 @@
         type: bool
         value: true
 
+# メニューバー関連
+- name: メニューバーにバッテリー残量をパーセント表示する
+  community.general.osx_defaults:
+    host: currentHost
+    domain: com.apple.controlcenter
+    key: BatteryShowPercentage
+    type: bool
+    value: true
+  notify: Control Centerを再起動
+
 # トラックパッド関連(チェックボックスは反映されるが動作しない...)
 - name: トラックパッドのタップでクリックを有効にする(その1)
   community.general.osx_defaults:
