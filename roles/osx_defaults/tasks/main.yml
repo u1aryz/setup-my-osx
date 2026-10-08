@@ -66,6 +66,12 @@
         key: FXDefaultSearchScope
         type: string
         value: SCcf
+    - name: Finderでパスバーを表示する
+      community.general.osx_defaults:
+        domain: com.apple.finder
+        key: ShowPathbar
+        type: bool
+        value: true
     - name: Finderでステータスバーを表示する
       community.general.osx_defaults:
         domain: com.apple.finder
