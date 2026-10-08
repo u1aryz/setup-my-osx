@@ -152,6 +152,32 @@
     type: bool
     value: true
 
+# テキスト入力関連
+- name: 自動スペル修正を無効にする
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: NSAutomaticSpellingCorrectionEnabled
+    type: bool
+    value: false
+- name: 自動大文字化を無効にする
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: NSAutomaticCapitalizationEnabled
+    type: bool
+    value: false
+- name: スマート引用符を無効にする
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: NSAutomaticQuoteSubstitutionEnabled
+    type: bool
+    value: false
+- name: スマートダッシュを無効にする
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: NSAutomaticDashSubstitutionEnabled
+    type: bool
+    value: false
+
 # スクリーンキャプチャ関連
 - name: スクリーンキャプチャに影を付けない
   community.general.osx_defaults:
