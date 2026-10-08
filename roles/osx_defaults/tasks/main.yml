@@ -66,6 +66,12 @@
         key: FXDefaultSearchScope
         type: string
         value: SCcf
+    - name: Finderで名前順のときにフォルダを先頭に表示する
+      community.general.osx_defaults:
+        domain: com.apple.finder
+        key: _FXSortFoldersFirst
+        type: bool
+        value: true
     - name: Finderでパスバーを表示する
       community.general.osx_defaults:
         domain: com.apple.finder
