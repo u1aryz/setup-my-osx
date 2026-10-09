@@ -22,7 +22,6 @@ homebrew_packages:
   - { name: minikube }
   - { name: helm }
   - { name: leoafarias/fvm/fvm }
-  - { name: lolcat }
   - { name: cloudflared }
   - { name: eza }
   - { name: rust }
