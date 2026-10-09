@@ -16,7 +16,6 @@ homebrew_packages:
   - { name: fzf }
   - { name: fish }
   - { name: openssl }
-  - { name: fontconfig }
   - { name: fx }
   - { name: kubectl }
   - { name: minikube }
