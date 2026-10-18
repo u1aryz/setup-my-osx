@@ -11,6 +11,7 @@ homebrew_packages:
   - { name: mercurial }
   - { name: tree }
   - { name: wget }
+  - { name: aria2 }
   - { name: curl }
   - { name: ghq }
   - { name: fzf }
