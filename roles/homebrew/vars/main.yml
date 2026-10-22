@@ -6,6 +6,7 @@ homebrew_taps:
   - hashicorp/tap
   - penso/tap
 homebrew_packages:
+  - { name: ca-certificates }
   - { name: gcc }
   - { name: git }
   - { name: mercurial }
