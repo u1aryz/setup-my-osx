@@ -1,6 +1,6 @@
 ---
 homebrew_taps:
-  - leoafarias/fvm
+  - btwld/fvm
   - fastly/tap
   - oven-sh/bun
   - hashicorp/tap
@@ -22,7 +22,7 @@ homebrew_packages:
   - { name: kubectl }
   - { name: minikube }
   - { name: helm }
-  - { name: leoafarias/fvm/fvm }
+  - { name: btwld/fvm/fvm }
   - { name: cloudflared }
   - { name: eza }
   - { name: rust }
