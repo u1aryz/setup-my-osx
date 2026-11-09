@@ -31,6 +31,7 @@ homebrew_packages:
   - { name: fd }
   - { name: mise }
   - { name: coreutils }
+  - { name: convmv }
   - { name: usage }
   - { name: fastly/tap/fastly }
   - { name: websocat }
