@@ -3,6 +3,11 @@
   hosts: localhost
   connection: local
   gather_facts: true
+  # brew upgrade は、更新したformulaの依存パッケージが古いと、その依存先も更新する。
+  # Homebrew版Ansibleはca-certificates等に依存しているため、実行中のAnsible自体が
+  # 入れ替わって削除され、module_legacy_m2c の読み込みに失敗する。
+  environment:
+    HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK: "1"
 
   vars_prompt:
     - name: ansible_become_pass
