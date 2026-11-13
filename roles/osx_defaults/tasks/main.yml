@@ -164,6 +164,39 @@
     type: bool
     value: true
 
+# ショートカット関連（AppleSymbolicHotKeysは入れ子構造のためosx_defaultsでは設定できない）
+# 注: この変更はログイン中のセッションには即時反映されないことがあり、再ログインが必要
+- name: 「次のウィンドウを操作対象にする」ショートカットの現在値を確認
+  ansible.builtin.shell: |
+    set -o pipefail
+    hotkeys="$(defaults export com.apple.symbolichotkeys - 2>/dev/null || true)"
+    raw() { printf '%s' "$hotkeys" | plutil -extract "$1" raw -o - - 2>/dev/null; }
+    id="AppleSymbolicHotKeys.{{ osx_defaults_move_focus_next_window_hotkey_id }}"
+    [ "$(raw "$id.enabled")" = "true" ] &&
+      [ "$(raw "$id.value.type")" = "standard" ] &&
+      [ "$(raw "$id.value.parameters.0")" = "{{ osx_defaults_move_focus_next_window_parameters[0] }}" ] &&
+      [ "$(raw "$id.value.parameters.1")" = "{{ osx_defaults_move_focus_next_window_parameters[1] }}" ] &&
+      [ "$(raw "$id.value.parameters.2")" = "{{ osx_defaults_move_focus_next_window_parameters[2] }}" ]
+  register: osx_defaults_move_focus_next_window
+  changed_when: false
+  failed_when: false
+
+- name: 「次のウィンドウを操作対象にする」ショートカットを⌘`にする
+  ansible.builtin.command:
+    argv:
+      - defaults
+      - write
+      - com.apple.symbolichotkeys
+      - AppleSymbolicHotKeys
+      - -dict-add
+      - "{{ osx_defaults_move_focus_next_window_hotkey_id | string }}"
+      - >-
+        <dict><key>enabled</key><true/><key>value</key><dict><key>parameters</key>
+        <array>{% for parameter in osx_defaults_move_focus_next_window_parameters %}<integer>{{ parameter }}</integer>{% endfor %}</array>
+        <key>type</key><string>standard</string></dict></dict>
+  when: osx_defaults_move_focus_next_window.rc != 0
+  changed_when: true
+
 # テキスト入力関連
 - name: 自動スペル修正を無効にする
   community.general.osx_defaults:

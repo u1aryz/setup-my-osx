@@ -1,0 +1,9 @@
+---
+# 「次のウィンドウを操作対象にする」を⌘`にするためのシンボリックホットキー設定
+# AppleSymbolicHotKeysのparametersは [文字コード, キーコード, 修飾キーフラグ] の3要素固定
+# 要素を追加・削除する場合は tasks/main.yml のチェック側（parameters[0..2]参照）も合わせて修正すること
+osx_defaults_move_focus_next_window_hotkey_id: 27
+osx_defaults_move_focus_next_window_parameters:
+  - 96 # ` (backquote) の文字コード
+  - 50 # ` (backquote) のキーコード
+  - 1048576 # Command (NSEventModifierFlagCommand)
