@@ -27,6 +27,16 @@
   when: item.plugin_id not in herdr_installed_plugin_ids
   changed_when: true
 
+- name: エージェント連携の状態を取得
+  ansible.builtin.command:
+    cmd: herdr integration status
+  environment:
+    HERDR_SOCKET_PATH: "{{ herdr_offline_socket_path }}"
+  register: herdr_integration_status_result
+  changed_when: false
+  check_mode: false
+
+# 未インストールまたは古いバージョンの連携のみインストールする
 - name: エージェント連携をインストール
   ansible.builtin.command:
     argv:
@@ -34,5 +44,9 @@
       - integration
       - install
       - "{{ item }}"
+  environment:
+    HERDR_SOCKET_PATH: "{{ herdr_offline_socket_path }}"
   loop: "{{ herdr_integrations }}"
+  when: >-
+    herdr_integration_status_result.stdout is not search('(?m)^' ~ item ~ ': current ')
   changed_when: true
