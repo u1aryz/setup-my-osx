@@ -8,6 +8,30 @@
     name: "{{ item }}"
   with_items: "{{ homebrew_taps }}"
 
+# Homebrewはサードパーティtapのformula・caskを信頼済みでないと読み込まない
+- name: 信頼済みのサードパーティパッケージを取得
+  ansible.builtin.command:
+    cmd: brew trust --json=v1
+  register: homebrew_trust_result
+  changed_when: false
+  check_mode: false
+
+- name: 信頼済みのサードパーティパッケージを設定
+  ansible.builtin.set_fact:
+    homebrew_trusted: "{{ homebrew_trust_result.stdout | from_json }}"
+
+- name: サードパーティformulaを信頼
+  ansible.builtin.command:
+    argv: [brew, trust, --formula, "{{ item }}"]
+  loop: "{{ homebrew_packages | map(attribute='name') | select('search', '/') | reject('in', homebrew_trusted.formulae) | list }}"
+  changed_when: true
+
+- name: サードパーティcaskを信頼
+  ansible.builtin.command:
+    argv: [brew, trust, --cask, "{{ item }}"]
+  loop: "{{ homebrew_cask_packages | map(attribute='name') | select('search', '/') | reject('in', homebrew_trusted.casks) | list }}"
+  changed_when: true
+
 - name: brewパッケージをインストール
   community.general.homebrew:
     name: "{{ item.name }}"
