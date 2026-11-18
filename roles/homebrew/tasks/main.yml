@@ -40,9 +40,8 @@
 
 - name: brewパッケージをインストール
   community.general.homebrew:
-    name: "{{ item.name }}"
+    name: "{{ homebrew_packages | map(attribute='name') | list }}"
     state: latest
-  with_items: "{{ homebrew_packages }}"
 
 - name: caskパッケージをインストール
   community.general.homebrew_cask:
