@@ -4,6 +4,7 @@
     repo: https://github.com/u1aryz/dotfiles.git
     dest: ~/.config/dotfiles
     version: main
+    # ローカルで変更中の場合があるため、clone済みならpullしない
     update: false
 
 # リンクのマッピングはdotfilesリポジトリ側のlink.shが管理する
