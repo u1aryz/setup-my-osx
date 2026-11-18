@@ -1,4 +1,5 @@
 ---
+# ansible-lintは別環境で動作し、Homebrew版Ansible同梱のコレクションを参照できないため、
+# lint実行時にプロジェクト内の.ansible/へインストールさせる
 collections:
   - name: community.general
-    version: ">=10.0.0,<11.0.0"
