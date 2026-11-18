@@ -14,7 +14,6 @@
 - name: 現在のデフォルトシェルを取得
   ansible.builtin.command: dscl . -read /Users/{{ ansible_facts["user_id"] }} UserShell
   register: fish_current_shell_raw
-  become: true
   changed_when: false
 
 - name: 現在のシェルを整形
