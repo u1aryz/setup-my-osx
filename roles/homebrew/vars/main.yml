@@ -71,13 +71,13 @@ homebrew_cask_packages:
   - { name: 1password }
   - { name: raycast }
   - { name: google-chrome }
-  - { name: google-cloud-sdk }
+  - { name: gcloud-cli }
   - { name: webstorm }
   - { name: keyboardcleantool }
   - { name: gimp }
   - { name: karabiner-elements }
   - { name: google-drive }
-  - { name: flux }
+  - { name: flux-app }
   - { name: slack }
   - { name: visual-studio-code }
   - { name: vlc }
@@ -87,12 +87,12 @@ homebrew_cask_packages:
   - { name: bitwarden }
   - { name: flutter }
   - { name: tableplus }
-  - { name: tailscale }
+  - { name: tailscale-app }
   - { name: neohtop }
   - { name: firefox@nightly }
   - { name: jiggler }
   - { name: raspberry-pi-imager }
-  - { name: azooKey }
+  - { name: azookey }
   - { name: font-meslo-lg-nerd-font }
   - { name: claude-code }
   - { name: firefox }
