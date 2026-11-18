@@ -1,4 +1,10 @@
 ---
+# caskのインストールにはsudoが必要なため、時間のかかる処理より前に確認する
+- name: becomeパスワードが指定されていることを確認
+  ansible.builtin.assert:
+    that: ansible_become_pass | default('') | length > 0
+    fail_msg: ansible_become_passが未指定です。非対話実行の場合は -e ansible_become_pass=... を指定してください
+
 - name: homebrewをアップデート
   community.general.homebrew:
     update_homebrew: true
@@ -38,11 +44,6 @@
     state: latest
   with_items: "{{ homebrew_packages }}"
 
-- name: becomeパスワードが定義されていることを確認
-  ansible.builtin.assert:
-    that: ansible_become_pass is defined
-    fail_msg: ansible_become_passが未定義です。非対話実行の場合は -e ansible_become_pass=... を指定してください
-
 - name: caskパッケージをインストール
   community.general.homebrew_cask:
     name: "{{ item.name }}"
@@ -67,4 +68,6 @@
 - name: すべてのcaskが失敗した場合は中断
   ansible.builtin.fail:
     msg: すべてのcaskのインストールに失敗しました。becomeパスワードが正しいか確認してください
-  when: homebrew_cask_failed | length == homebrew_cask_packages | length
+  when:
+    - homebrew_cask_packages | length > 0
+    - homebrew_cask_failed | length == homebrew_cask_packages | length
