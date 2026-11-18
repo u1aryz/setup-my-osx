@@ -12,7 +12,7 @@
 - name: サードパーティtapを追加
   community.general.homebrew_tap:
     name: "{{ item }}"
-  with_items: "{{ homebrew_taps }}"
+  loop: "{{ homebrew_taps }}"
 
 # Homebrewはサードパーティtapのformula・caskを信頼済みでないと読み込まない
 - name: 信頼済みのサードパーティパッケージを取得
@@ -53,7 +53,7 @@
     sudo_password: "{{ ansible_become_pass }}"
   ignore_errors: true
   register: homebrew_cask_results
-  with_items: "{{ homebrew_cask_packages }}"
+  loop: "{{ homebrew_cask_packages }}"
 
 - name: 失敗したcaskの一覧を集計
   ansible.builtin.set_fact:
