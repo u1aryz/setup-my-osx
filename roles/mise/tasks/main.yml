@@ -12,11 +12,18 @@
     mode: "0755"
 
 - name: mise補完スクリプト(mise.fish)を生成する
-  ansible.builtin.shell: mise completion fish > "{{ mise_completion_file }}"
-  args:
-    creates: "{{ mise_completion_file }}"
+  ansible.builtin.command:
+    cmd: mise completion fish
   register: mise_completion_result
-  changed_when: mise_completion_result.rc == 0
+  changed_when: false
+  check_mode: false
+
+# miseの更新で補完スクリプトが変わった場合にも追従する
+- name: mise補完スクリプト(mise.fish)を配置する
+  ansible.builtin.copy:
+    dest: "{{ mise_completion_file }}"
+    content: "{{ mise_completion_result.stdout }}\n"
+    mode: "0644"
 
 - name: mise管理ツールを更新
   ansible.builtin.command:
