@@ -125,12 +125,13 @@
     value: 1
 
 # 保存値が既に一致していても、ログイン中のセッションへ再適用する
+# 設定値の変更は上記タスクで報告されるため、再適用自体はchangedとして扱わない
 - name: トラックパッド設定を現在のセッションに反映する
   ansible.builtin.command:
     argv:
       - /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings
       - -u
-  changed_when: true
+  changed_when: false
 
 # キーボード関連
 - name: フルキーボードアクセスを有効にする
