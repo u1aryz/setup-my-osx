@@ -36,7 +36,6 @@ homebrew_packages:
   - { name: fastly/tap/fastly }
   - { name: websocat }
   - { name: noti }
-  - { name: ghostty }
   - { name: prettier }
   - { name: yamlfmt }
   - { name: docker }
@@ -50,18 +49,15 @@ homebrew_packages:
   - { name: awscli }
   - { name: graphviz }
   - { name: yt-dlp }
-  - { name: codex }
   - { name: hashicorp/tap/terraform }
   - { name: gh }
   - { name: lazydocker }
   - { name: oven-sh/bun/bun }
   - { name: mactop }
-  - { name: orbstack }
   - { name: cloc }
   - { name: openjdk }
   - { name: container }
   - { name: herdr }
-  - { name: penso/tap/herdr-gpui }
   - { name: hunk }
   - { name: go }
   - { name: glow }
@@ -101,3 +97,7 @@ homebrew_cask_packages:
   - { name: codex-app }
   - { name: android-commandlinetools }
   - { name: android-platform-tools }
+  - { name: orbstack }
+  - { name: ghostty }
+  - { name: codex }
+  - { name: penso/tap/herdr-gpui }

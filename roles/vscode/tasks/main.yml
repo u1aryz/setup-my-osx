@@ -2,7 +2,8 @@
 - name: vscodeをインストール
   community.general.homebrew_cask:
     name: visual-studio-code
-    state: installed
+    state: latest
+    greedy: true
     install_options: "appdir=/Applications"
 
 - name: vscodeのプラグインをインストール

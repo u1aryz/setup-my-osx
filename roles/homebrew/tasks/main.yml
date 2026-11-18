@@ -22,7 +22,9 @@
 - name: caskパッケージをインストール
   community.general.homebrew_cask:
     name: "{{ item.name }}"
-    state: installed
+    state: latest
+    # 自動更新機能を持つcaskも含め、毎回最新に更新する
+    greedy: true
     install_options: "appdir=/Applications"
     sudo_password: "{{ ansible_become_pass }}"
   ignore_errors: true
