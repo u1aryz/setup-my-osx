@@ -6,7 +6,17 @@
     greedy: true
     install_options: "appdir=/Applications"
 
-- name: vscodeのプラグインをインストール
-  ansible.builtin.command: "code --install-extension {{ item }} --force"
-  with_items: "{{ vscode_plugins }}"
+- name: インストール済みのvscodeプラグインを取得
+  ansible.builtin.command:
+    cmd: code --list-extensions
+  register: vscode_installed_plugins_result
   changed_when: false
+  check_mode: false
+
+- name: 未インストールのvscodeプラグインをインストール
+  ansible.builtin.command:
+    argv: [code, --install-extension, "{{ item }}"]
+  loop: "{{ vscode_plugins }}"
+  # 拡張機能IDは大文字小文字を区別しないため、小文字で比較する
+  when: item | lower not in vscode_installed_plugins_result.stdout_lines | map('lower')
+  changed_when: true
